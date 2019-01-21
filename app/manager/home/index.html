@@ -55,7 +55,7 @@
 				</div>
 				<div class="left_deviceAlarmDay home_bg">
 				 	<div class="deviceAlarmDay_detail">
-				 		<img src="/images/home/datatime.png" alt="历史高峰告警日" class="detail_image"/>
+				 		<img src="./images/home/datatime.png" alt="历史高峰告警日" class="detail_image"/>
 				 		<span class="detail_datatime">{{vm.initData.currentDay}}</span>
 				 	</div>
 				 	<div class="deviceAlarmDay_title">当前日期</div>
@@ -73,7 +73,7 @@
 				 				</td>
 				 				<!--<td>
 				 					告警{{v.alarmDeviceCount}}次
-				 					<img src="/images/home/icon-uparrow.png" alt="" class="error-icon" ng-if="v.alarmLevelUp === true"/><img src="/images/home/icon-downarrow.png" alt="" class="error-icon" ng-if="v.alarmLevelUp === false"/>
+				 					<img src="./images/home/icon-uparrow.png" alt="" class="error-icon" ng-if="v.alarmLevelUp === true"/><img src="./images/home/icon-downarrow.png" alt="" class="error-icon" ng-if="v.alarmLevelUp === false"/>
 				 				</td>-->
 				 			</tr>
 				 		</table>
@@ -86,7 +86,7 @@
 						<ul>
 							<li>
 								<div class="right_category bg_blue">
-									<div class="right_deviceCount"><img src="/images/home/icon-devState1.png" alt="" class="error-icon"/>设备总数</div>
+									<div class="right_deviceCount"><img src="./images/home/icon-devState1.png" alt="" class="error-icon"/>设备总数</div>
 									<div class="device_total"><span class="device_count">{{vm.initData.totalDeviceCount}}</span>台</div>
 								</div>
 							</li>
@@ -94,7 +94,7 @@
 						<ul>
 							<li>
 								<div class="right_category bg_green">
-									<div class="right_deviceCount"><img src="/images/home/icon-devState1.png" alt="" class="error-icon"/>在线设备</div>
+									<div class="right_deviceCount"><img src="./images/home/icon-devState1.png" alt="" class="error-icon"/>在线设备</div>
 									<div class="device_total"><span class="device_count dataItem" id="online" data-dataItemName="读取数据异常" data-dataItemId = "" data-unit = "">{{vm.initData.online}}</span>台</div>
 								</div>
 							</li>
@@ -102,7 +102,7 @@
 						<ul>
 							<li>
 								<div class="right_category bg_red">
-									<div class="right_deviceCount"><img src="/images/home/icon-devState2.png" alt="" class="error-icon"/>故障设备</div>
+									<div class="right_deviceCount"><img src="./images/home/icon-devState2.png" alt="" class="error-icon"/>故障设备</div>
 									<div class="device_total"><span class="device_count dataItem" id="fault" data-dataItemName="故障" data-dataItemId = "" data-unit = "">{{vm.initData.fault}}</span>台</div>
 								</div>
 							</li>
@@ -110,7 +110,7 @@
 						<ul>
 							<li>
 								<div class="right_category bg_grey">
-									<div class="right_deviceCount"><img src="/images/home/icon-devState2.png" alt="" class="error-icon"/>离线设备</div>
+									<div class="right_deviceCount"><img src="./images/home/icon-devState2.png" alt="" class="error-icon"/>离线设备</div>
 									<div class="device_total"><span class="device_count dataItem" id="outline" data-dataItemName="读设备数据异常" data-dataItemId = "" data-unit = "">{{vm.initData.outline}}</span>台</div>
 								</div>
 							</li>
