@@ -1,0 +1,1 @@
+!function(t){function a(t){var a={abstract:!0,url:"/statistics",views:{"":{templateUrl:"./app/manager/statistics/index.html"}}};t.state("manager.statistics",a)}t.module("app.managerModule.statistics").config(a),a.$inject=["$stateProvider"]}(window.angular);

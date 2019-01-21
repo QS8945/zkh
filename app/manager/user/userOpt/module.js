@@ -1,0 +1,1 @@
+!function(a){a.module("app.managerModule.user.opt",[])}(window.angular);

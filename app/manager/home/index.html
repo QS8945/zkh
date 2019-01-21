@@ -1,0 +1,130 @@
+<div class="content home">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-3 home_left_3">
+				<div class="left_deviceQuery home_bg">
+				 	<div class="deviceQuery_header home_module_header">设备查询</div>
+				 	<div class="deviceQuery_condition">
+				 		<input type="text" class="condition_deviceId input_common" placeholder="输入设备名称/客户名称" ng-model="vm.initData.queryDeviceListCondition.multiCriteria"/>
+				 		<input type="button" class="condition_query" value="查询" ng-click="vm.initFunctions.queryDeviceList()"/>
+				 	</div>
+				 	<div class="deviceQuery_deviceTable scroll-div">
+				 		<table class="table">
+				 			<tr ng-repeat="(k,v) in vm.initData.deviceQueryInfo track by $index">
+				 				<td>
+				 					<i class="fa fa-laptop"></i>
+				 				</td>
+				 				<td>
+				 					{{v.name}}
+				 				</td>
+				 				<td>
+				 					{{v.detailJson.compressorModel}}
+				 				</td>
+				 				<td>
+				 					{{v.deviceLand}}
+				 				</td>
+				 				<td>
+				 					<span class="device_moreInfo" ng-click="vm.initFunctions.gotoDetails($index)"> >> </span>
+				 				</td>
+				 			</tr>
+				 		</table>
+				 	</div>
+				</div>
+				<div class="left_deviceActual home_bg">
+				 	<div class="deviceActual_header home_module_header">设备实况</div>
+				 	<div class="deviceActual_unnormal">
+				 		<ul class="dataItem" id="device_state" data-dataItemName="运行状态" data-dataItemId = "" data-unit = "">
+				 			<li>
+				 				<div class="unnormal_count border-blue">{{vm.initData.deviceState.normal}}个</div>
+				 				<div class="unnormal_type first">正常</div>
+				 			</li>
+				 			<li>
+				 				<div class="unnormal_count border-orange">{{vm.initData.deviceState.Shutdown}}个</div>
+				 				<div class="unnormal_type">停机</div>
+				 			</li>
+				 			<!--<li>
+				 				<div class="unnormal_count border-yellow">0个</div>
+				 				<div class="unnormal_type">性能问题</div>
+				 			</li>
+				 			<li>
+				 				<div class="unnormal_count border-green">0个</div>
+				 				<div class="unnormal_type">接口异常</div>
+				 			</li>-->
+				 		</ul>
+				 	</div>
+				</div>
+				<div class="left_deviceAlarmDay home_bg">
+				 	<div class="deviceAlarmDay_detail">
+				 		<img src="/images/home/datatime.png" alt="历史高峰告警日" class="detail_image"/>
+				 		<span class="detail_datatime">{{vm.initData.currentDay}}</span>
+				 	</div>
+				 	<div class="deviceAlarmDay_title">当前日期</div>
+				</div>
+				<div class="left_deviceAlarmTop5 home_bg">
+				 	<div class="deviceAlarmTop5_header home_module_header">告警设备TOP5</div>
+				 	<div class="deviceAlarmTop5_alarmTable scroll-div">
+				 		<table class="table dataItem" data-dataItemName="预警" id="alarm" data-dataItemId = "" data-unit = "">
+				 			<tr ng-repeat="(k,v) in vm.initData.alarmDeviceInfo track by $index">
+				 				<td>
+				 					<i class="fa fa-laptop"></i>
+				 				</td>
+				 				<td>
+				 					{{v.IotObjectName}}
+				 				</td>
+				 				<!--<td>
+				 					告警{{v.alarmDeviceCount}}次
+				 					<img src="/images/home/icon-uparrow.png" alt="" class="error-icon" ng-if="v.alarmLevelUp === true"/><img src="/images/home/icon-downarrow.png" alt="" class="error-icon" ng-if="v.alarmLevelUp === false"/>
+				 				</td>-->
+				 			</tr>
+				 		</table>
+				 	</div>
+				</div>
+			</div>
+			<div class="col-md-9 home_right_9 home_bg">
+				<div class="row">
+					<div class="col-md-3">
+						<ul>
+							<li>
+								<div class="right_category bg_blue">
+									<div class="right_deviceCount"><img src="/images/home/icon-devState1.png" alt="" class="error-icon"/>设备总数</div>
+									<div class="device_total"><span class="device_count">{{vm.initData.totalDeviceCount}}</span>台</div>
+								</div>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<div class="right_category bg_green">
+									<div class="right_deviceCount"><img src="/images/home/icon-devState1.png" alt="" class="error-icon"/>在线设备</div>
+									<div class="device_total"><span class="device_count dataItem" id="online" data-dataItemName="读取数据异常" data-dataItemId = "" data-unit = "">{{vm.initData.online}}</span>台</div>
+								</div>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<div class="right_category bg_red">
+									<div class="right_deviceCount"><img src="/images/home/icon-devState2.png" alt="" class="error-icon"/>故障设备</div>
+									<div class="device_total"><span class="device_count dataItem" id="fault" data-dataItemName="故障" data-dataItemId = "" data-unit = "">{{vm.initData.fault}}</span>台</div>
+								</div>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<div class="right_category bg_grey">
+									<div class="right_deviceCount"><img src="/images/home/icon-devState2.png" alt="" class="error-icon"/>离线设备</div>
+									<div class="device_total"><span class="device_count dataItem" id="outline" data-dataItemName="读设备数据异常" data-dataItemId = "" data-unit = "">{{vm.initData.outline}}</span>台</div>
+								</div>
+							</li>
+						</ul>
+						<div class="breakdown_top5_home">
+							<div class="breakdown_header">故障分布TOP5</div>
+							<div id="breakdown_bight"class="dataItem" data-dataItemName="故障" data-dataItemId = "" data-unit = ""></div>
+						</div>
+					</div>
+					<div class="col-md-9">
+						<div id="map"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

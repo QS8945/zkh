@@ -1,0 +1,1 @@
+!function(e){e.module("app",["ui.router","ngResource","app.resource","app.service","app.registerModule","app.loginModule","ng-layer","app.managerModule","app.officalModule"])}(window.angular);

@@ -1,0 +1,1 @@
+!function(n){n.module("app.components",["app.components.layout"])}(window.angular);

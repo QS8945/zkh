@@ -1,0 +1,1 @@
+!function(t){function e(t){var e={url:"/deviceSta",views:{"":{templateUrl:"./app/manager/statistics/deviceSta/index.html",controller:"DeviceStaController",controllerAs:"vm"}}};t.state("manager.statistics.deviceSta",e)}t.module("app.managerModule.statistics.deviceSta").config(e),e.$inject=["$stateProvider"]}(window.angular);

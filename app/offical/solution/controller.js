@@ -1,0 +1,1 @@
+!function(){function o(o,l,n,t,i,e,s,a,r){var u=this;u.initTools={}}angular.module("app.officalModule.solution").controller("SolutionController",o),o.$inject=["$scope","layer","API","session","MD5","$state","TEMPLATEDATA","COMMONJS","JEEAPI"]}();

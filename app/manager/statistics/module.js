@@ -1,0 +1,1 @@
+!function(a){a.module("app.managerModule.statistics",["app.managerModule.statistics.breakdownSta","app.managerModule.statistics.customerSta","app.managerModule.statistics.deviceSta"])}(window.angular);

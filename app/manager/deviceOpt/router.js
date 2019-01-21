@@ -1,0 +1,1 @@
+!function(e){function t(e){var t={url:"/deviceOpt/:id/:type/",views:{"":{templateUrl:"./app/manager/deviceOpt/index.html",controller:"DeviceOptController",controllerAs:"vm"}}};e.state("manager.deviceOpt",t)}e.module("app.managerModule.deviceOpt").config(t),t.$inject=["$stateProvider"]}(window.angular);

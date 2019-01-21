@@ -1,0 +1,1 @@
+!function(o){function t(o){var t={url:"/product",views:{"":{templateUrl:"./app/offical/product/index.html",controller:"ProductController",controllerAs:"vm"}}};o.state("offical.product",t)}o.module("app.officalModule.product").config(t),t.$inject=["$stateProvider"]}(window.angular);

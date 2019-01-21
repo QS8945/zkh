@@ -1,0 +1,1 @@
+!function(r){function e(r){return function(e){return function(n,u,t){return r(e+n,u,t)}}}function n(r){return r("/web/")}r.module("app.resource").factory("resourceUtils",e).factory("webResource",n),e.$inject=["$resource"],n.$inject=["resourceUtils"]}(window.angular);

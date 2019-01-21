@@ -1,0 +1,1 @@
+!function(t){function e(t){var e={url:"/add/:id/:type/",views:{"":{templateUrl:"./app/manager/customer/stationAdd/index.html",controller:"StationAddController",controllerAs:"vm"}}};t.state("manager.customer.add",e)}t.module("app.managerModule.customer.add").config(e),e.$inject=["$stateProvider"]}(window.angular);

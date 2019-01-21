@@ -1,0 +1,1 @@
+!function(a){a.module("app.managerModule.statistics.customerSta",[])}(window.angular);

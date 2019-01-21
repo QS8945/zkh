@@ -1,0 +1,1 @@
+!function(o){function e(o){var e={url:"/home",views:{"":{templateUrl:"./app/offical/home/index.html",controller:"OfficalHomeController",controllerAs:"vm"}}};o.state("offical.home",e)}o.module("app.officalModule.home").config(e),e.$inject=["$stateProvider"]}(window.angular);

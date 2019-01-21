@@ -1,0 +1,1 @@
+!function(e){function n(e){var n={url:"/personalCenter",views:{"":{templateUrl:"./app/manager/personalCenter/index.html",controller:"personalCenterController",controllerAs:"vm"}}};e.state("manager.personalCenter",n)}e.module("app.managerModule.personalCenter").config(n),n.$inject=["$stateProvider"]}(window.angular);

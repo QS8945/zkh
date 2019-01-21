@@ -1,0 +1,67 @@
+<div class="content user">
+    <div class="m-header"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>&nbsp;&nbsp;当前位置&nbsp;:&nbsp;<span class="m-header-router">用户管理</span>
+    </div>
+    <div class="m-body">
+        <div class="m-body-title">用户管理<a class="title-btn" ng-click="vm.initTools.add()">新增 <span class="glyphicon glyphicon-plus-sign"></span></a>
+        </div>
+        <form autocomplete="off">
+            <div class="form-item"><label for="userName"><span
+                    class="glyphicon glyphicon-search"></span></label><input type="text" placeholder="输入用户名称"
+                                                                             id="userName" name="userName" ng-model="vm.initTools.userName"></div>
+            <!--<div class="form-item">-->
+                <!--<label for="dateFrom"><span class="glyphicon glyphicon-calendar"></span></label><input class="date-from"-->
+                                                                                                       <!--type="date"-->
+                                                                                                       <!--id="dateFrom"-->
+                                                                                                       <!--name="dateFrom"-->
+                                                                                                       <!--placeholder="起始日期">-->
+            <!--</div>-->
+
+            <div class="form-item">
+                <select id="status" name="status" ng-model="vm.initTools.status"
+                        ng-options="status.id as status.name for status in vm.initTools.statuses"
+                        class="form-control" required>
+                    <!--<option value="0">请选择</option>-->
+                </select>
+            </div>
+            <a class="form-btn" ng-click="vm.initTools.searchUsers()">搜索</a>
+        </form>
+        <table class="content-table">
+            <thead>
+            <th class="col-sm-1">序号</th>
+            <th class="col-sm-2">用户</th>
+            <th class="col-sm-2">所属客户</th>
+            <!--<th class="col-sm-1">所在职位</th>-->
+            <!--<th class="col-sm-2">角色名称</th>-->
+            <th class="col-sm-2">创建时间</th>
+            <!--<th>用户类别</th>-->
+            <th class="col-sm-1">状态</th>
+            <th class="col-sm-2">备注</th>
+            <th class="col-sm-1">操作</th>
+            </thead>
+            <tbody>
+            <tr ng-repeat="data in vm.initTools.usersData">
+                <td><span class="form-number">{{(vm.initTools.pageNo-1)*vm.initTools.pageSize+$index+1}}</span></td>
+                <td>{{data.userName}}</td>
+                <td>{{data.employee.company.fullName}}</td>
+                <!--<td>{{data.postName}}</td>-->
+                <!--<td>{{data.roleName}}</td>-->
+                <td>{{data.createDate|date : 'yyyy-MM-dd hh:mm:ss'}}</td>
+                <!--<td>{{data.userType}}</td>-->
+                <td>{{data.status==='0' ? '启用':'禁止'}}</td>
+                <td>{{data.remarks}}</td>
+                <td><a class="table-btn btn-edit" title="编辑" ng-click="vm.initTools.edit($index)"><span class="glyphicon glyphicon-edit"></span></a><a
+                        class="table-btn btn-sign" title="查看" ng-click="vm.initTools.checkItem($index)"><span
+                        class="glyphicon glyphicon-ok-sign"></span></a><a class="table-btn btn-lock" title="{{data.status==0?'禁用':'启用'}}" ng-click="vm.initTools.disable($index)"><i
+                        class="fa" ng-class="{'fa-unlock':data.status==2,'fa-lock':data.status==0}"></i></a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="footer-page"><span class="page-set">总共 {{vm.initTools.totalNum}} 条 每页显示<select ng-change="vm.initTools.searchUsers()" name="pageType" id="pageType"
+                                                                                   ng-model="vm.initTools.pageSizeStatic">
+            <option ng-repeat="pageType in vm.initTools.pageTypes">{{pageType}}</option>
+        </select>条</span>
+            <div id="Pagination" align="center"></div>
+        </div>
+    </div>
+</div>

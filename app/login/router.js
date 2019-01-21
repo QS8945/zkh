@@ -1,0 +1,1 @@
+!function(l){function o(l){var o={url:"/login",views:{"":{templateUrl:"./app/login/index.html",controller:"loginController",controllerAs:"vm"}}};l.state("login",o)}l.module("app.loginModule").config(o),o.$inject=["$stateProvider"]}(window.angular);

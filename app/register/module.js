@@ -1,0 +1,1 @@
+!function(e){e.module("app.registerModule",[])}(window.angular);

@@ -1,0 +1,1 @@
+!function(n){n.module("app.loginModule",[])}(window.angular);

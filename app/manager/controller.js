@@ -1,0 +1,1 @@
+!function(){function e(e,a,t,n,o,r,s,i){var l=this;this.COMMONJS=i;l.initData={},l.initData.userName=n.getLocalObject("userInfo").userName,e.state=r}angular.module("app.managerModule").controller("managerController",e),e.$inject=["$scope","layer","API","session","MD5","$state","TEMPLATEDATA","COMMONJS"]}();

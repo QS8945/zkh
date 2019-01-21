@@ -1,0 +1,308 @@
+<!--<div class="container-fluid">-->
+	<!--<header class="l-header l-header-login" data-spy="affix" data-offset-top="160" data-offset-bottom="0">-->
+		<!--<div class="container">-->
+			<!--<div class="row clearfix">-->
+				<!--<div class="col-sm-4 l-header-log">-->
+					<!--<a ui-sref="mySpace">-->
+						<!--&lt;!&ndash;<img src="./images/logo.png" />&ndash;&gt;-->
+					<!--</a>-->
+				<!--</div>-->
+				<!--<div class="col-sm-8 login-option">-->
+					<!--<div class="item">-->
+						<!--<a ng-if="vm.session.getLocalObject('userInfo').isLogin  == '0'" ng-click="vm.openLoad()">登录</a>-->
+						<!--<a ng-if="vm.session.getLocalObject('userInfo').isLogin == '1'">用户:{{vm.session.getLocalObject('userInfo').userName}}</a>-->
+					<!--</div>-->
+					<!--<div class="item">-->
+						 <!--&lt;!&ndash; ng-click="vm.toggleLanguage('CN')"&ndash;&gt;<a ui-sref="register" ng-if="vm.session.getLocalObject('userInfo').isLogin  == '0'">注册</a>-->
+						<!--<a ng-click="vm.invalidateUser()" ng-if="vm.session.getLocalObject('userInfo').isLogin  == '1'">注销</a>-->
+					<!--</div>-->
+					<!--<div class="item">-->
+						<!--<a ng-click="vm.toggleLanguage('CN')">CN</a>-->
+						 <!--·-->
+						<!--<a ng-click="vm.toggleLanguage('EN')">EN</a>-->
+					<!--</div>-->
+					<!--<div class="item" ng-if="vm.session.getLocalObject('userInfo').defaultEnterSpaceUserId">-->
+						<!--<a ng-click="vm.returnTargetSpace()" ng-class="{'dark':!vm.session.getLocal('defaultEnterSpaceUserId')}">{{vm.session.getLocal('defaultEnterSpaceUserName')}} 空间</a>-->
+						 <!--·-->
+						<!--<a ng-click="vm.returnMySpace()" ng-class="{'dark':vm.session.getLocal('defaultEnterSpaceUserId')}">我的空间</a>-->
+					<!--</div>-->
+				<!--</div>-->
+			<!--</div>-->
+		<!--</div>-->
+	<!--</header>-->
+	<!--<header class="l-header">-->
+		<!--<div class="container">-->
+			<!--<div class="row clearfix">-->
+				<!--&lt;!&ndash;<div class="col-sm-4 l-header-log">-->
+					<!--<a ui-sref="home">-->
+						<!--<img src="src/app/home/abc.png" />-->
+					<!--</a>-->
+				<!--</div>-->
+				<!--<div class="col-sm-8">-->
+					<!--<div class="item">-->
+						<!--<a ng-click="vm.openLoad()">登录</a>-->
+					<!--</div>-->
+				<!--</div>&ndash;&gt;-->
+				<!--&lt;!&ndash;<div class="col-sm-9">-->
+					<!--<ul class="l-header-nav">-->
+						<!--<li class="nav-item">-->
+							<!--<a class="nav-title" ui-sref="home" ui-sref-active="active">首页</a>-->
+						<!--</li>-->
+						<!--<li class="nav-item">-->
+							<!--<a class="nav-title">产品研发<span class="caret"></span></a>-->
+							<!--<ul class="nav-sec-list">-->
+								<!--<li class="sec-item">-->
+									<!--<a class="sec-title">概览<span class="caret"></span></a>-->
+									<!--<ul class="nav-third-list">-->
+										<!--<li class="nav-third-item">-->
+											<!--<a class="nav-third-title" ui-sref="OVEDvsSystem" ui-sref-active="active">丹维思-DAN系统</a>-->
+										<!--</li>-->
+									<!--</ul>-->
+								<!--</li>-->
+								<!--<li class="sec-item">-->
+									<!--<a class="sec-title">物联平台<span class="caret"></span></a>-->
+									<!--<ul class="nav-third-list">-->
+										<!--<li class="nav-third-item">-->
+											<!--<a class="nav-third-title" ui-sref="IOTOverview" ui-sref-active="active">概览</a>-->
+										<!--</li>-->
+										<!--<li class="nav-third-item">-->
+											<!--<a class="nav-third-title" ui-sref="IOTplatformSpecific" ui-sref-active="active">平台特性</a>-->
+										<!--</li>-->
+										<!--<li class="nav-third-item">-->
+											<!--<a class="nav-third-title" ui-sref="IOTPlatformStructure" ui-sref-active="active">平台架构</a>-->
+										<!--</li>-->
+										<!--<li class="nav-third-item">-->
+											<!--<a class="nav-third-title" ui-sref="IOTBaseModel" ui-sref-active="active">基础模型</a>-->
+										<!--</li>-->
+										<!--<li class="nav-third-item">-->
+											<!--<a class="nav-third-title" ui-sref="IOTSceneModel" ui-sref-active="active">场景模型</a>-->
+										<!--</li>-->
+										<!--<li class="nav-third-item">-->
+											<!--<a class="nav-third-title" ui-sref="IOTRealTimeMonitor" ui-sref-active="active">实时监控</a>-->
+										<!--</li>-->
+										<!--<li class="nav-third-item">-->
+											<!--<a class="nav-third-title" ui-sref="IOTFaultAlarm" ui-sref-active="active">故障告警</a>-->
+										<!--</li>-->
+										<!--<li class="nav-third-item">-->
+											<!--<a class="nav-third-title" ui-sref="IOTHistoricalData" ui-sref-active="active">历史数据</a>-->
+										<!--</li>-->
+									<!--</ul>-->
+								<!--</li>-->
+								<!--<li class="sec-item">-->
+									<!--<a class="sec-title">数据分析<span class="caret"></span></a>-->
+									<!--<ul class="nav-third-list">-->
+										<!--<li class="nav-third-item">-->
+											<!--<a class="nav-third-title" ui-sref="DATOverview" ui-sref-active="active">概览</a>-->
+										<!--</li>-->
+										<!--<li class="nav-third-item">-->
+											<!--<a class="nav-third-title" ui-sref="DATAnalysisModel" ui-sref-active="active">分析模型</a>-->
+										<!--</li>-->
+										<!--<li class="nav-third-item">-->
+											<!--<a class="nav-third-title" ui-sref="DATAnalysisApplication" ui-sref-active="active">分析应用</a>-->
+										<!--</li>-->
+									<!--</ul>-->
+								<!--</li>-->
+								<!--<li class="sec-item">-->
+									<!--<a class="sec-title">业务运营<span class="caret"></span></a>-->
+									<!--<ul class="nav-third-list">-->
+										<!--<li class="nav-third-item">-->
+											<!--<a class="nav-third-title" ui-sref="BUSOverview" ui-sref-active="active">概览</a>-->
+										<!--</li>-->
+										<!--<li class="nav-third-item">-->
+											<!--<a class="nav-third-title" ui-sref="BUSModel" ui-sref-active="active">业务模型</a>-->
+										<!--</li>-->
+										<!--<li class="nav-third-item">-->
+											<!--<a class="nav-third-title" ui-sref="BUSApplication" ui-sref-active="active">业务应用</a>-->
+										<!--</li>-->
+									<!--</ul>-->
+								<!--</li>-->
+								<!--<li class="sec-item">-->
+									<!--<a class="sec-title">权限管理<span class="caret"></span></a>-->
+									<!--<ul class="nav-third-list">-->
+										<!--<li class="nav-third-item">-->
+											<!--<a class="nav-third-title" ui-sref="PEROverview" ui-sref-active="active">概览</a>-->
+										<!--</li>-->
+									<!--</ul>-->
+								<!--</li>-->
+								<!--<li class="sec-item">-->
+									<!--<a class="sec-title">信息安全<span class="caret"></span></a>-->
+									<!--<ul class="nav-third-list">-->
+										<!--<li class="nav-third-item">-->
+											<!--<a class="nav-third-title" ui-sref="INFOverview" ui-sref-active="active">概览</a>-->
+										<!--</li>-->
+									<!--</ul>-->
+								<!--</li>-->
+								<!--<li class="sec-item">-->
+									<!--<a class="sec-title">移动应用<span class="caret"></span></a>-->
+									<!--<ul class="nav-third-list">-->
+										<!--<li class="nav-third-item">-->
+											<!--<a class="nav-third-title" ui-sref="MOBOverview" ui-sref-active="active">概览</a>-->
+										<!--</li>-->
+									<!--</ul>-->
+								<!--</li>-->
+								<!--<li class="sec-item">-->
+									<!--<a class="sec-title">硬件模块<span class="caret"></span></a>-->
+									<!--<ul class="nav-third-list">-->
+										<!--<li class="nav-third-item">-->
+											<!--<a class="nav-third-title" ui-sref="HAROverview" ui-sref-active="active">概览</a>-->
+										<!--</li>-->
+									<!--</ul>-->
+								<!--</li>-->
+								<!--<li class="sec-item">-->
+									<!--<a class="sec-title">系统集成<span class="caret"></span></a>-->
+									<!--<ul class="nav-third-list">-->
+										<!--<li class="nav-third-item">-->
+											<!--<a class="nav-third-title" ui-sref="SYSOverview" ui-sref-active="active">概览</a>-->
+										<!--</li>-->
+									<!--</ul>-->
+								<!--</li>-->
+							<!--</ul>-->
+						<!--</li>-->
+						<!--<li class="nav-item">-->
+							<!--<a class="nav-title">解决方案<span class="caret"></span></a>-->
+							<!--<ul class="nav-sec-list">-->
+								<!--<li class="sec-item">-->
+									<!--<a class="sec-title">工业制造<span class="caret"></span></a>-->
+									<!--<ul class="nav-third-list">-->
+										<!--<li class="nav-third-item">-->
+											<!--<a class="nav-third-title" ui-sref="INDOverview" ui-sref-active="active">概览</a>-->
+										<!--</li>-->
+										<!--<li class="nav-third-item">-->
+											<!--<a class="nav-third-title" ui-sref="INDIOTPlatform" ui-sref-active="active">物联平台</a>-->
+										<!--</li>-->
+										<!--<li class="nav-third-item">-->
+											<!--<a class="nav-third-title" ui-sref="INDDataAnalysis" ui-sref-active="active">数据分析</a>-->
+										<!--</li>-->
+										<!--<li class="nav-third-item">-->
+											<!--<a class="nav-third-title" ui-sref="INDBusinessOperation" ui-sref-active="active">业务运营</a>-->
+										<!--</li>-->
+										<!--<li class="nav-third-item">-->
+											<!--<a class="nav-third-title" ui-sref="INDVideoMonitor" ui-sref-active="active">视频监控</a>-->
+										<!--</li>-->
+										<!--<li class="nav-third-item">-->
+											<!--<a class="nav-third-title" ui-sref="INDSECSGEM" ui-sref-active="active">SECS/GEM</a>-->
+										<!--</li>-->
+									<!--</ul>-->
+								<!--</li>-->
+								<!--<li class="sec-item">-->
+									<!--<a class="sec-title">建筑家居<span class="caret"></span></a>-->
+									<!--<ul class="nav-third-list">-->
+										<!--<li class="nav-third-item">-->
+											<!--<a class="nav-third-title" ui-sref="BUIOverview" ui-sref-active="active">概览</a>-->
+										<!--</li>-->
+										<!--<li class="nav-third-item">-->
+											<!--<a class="nav-third-title" ui-sref="BUIIOTPlatform" ui-sref-active="active">物联平台</a>-->
+										<!--</li>-->
+										<!--<li class="nav-third-item">-->
+											<!--<a class="nav-third-title" ui-sref="BUIDataAnalysis" ui-sref-active="active">数据分析</a>-->
+										<!--</li>-->
+										<!--<li class="nav-third-item">-->
+											<!--<a class="nav-third-title" ui-sref="BUIBusinessOperation" ui-sref-active="active">业务运营</a>-->
+										<!--</li>-->
+										<!--<li class="nav-third-item">-->
+											<!--<a class="nav-third-title" ui-sref="BUIVideoMonitor" ui-sref-active="active">视频监控</a>-->
+										<!--</li>-->
+									<!--</ul>-->
+								<!--</li>-->
+								<!--<li class="sec-item">-->
+									<!--<a class="sec-title">能源电力<span class="caret"></span></a>-->
+									<!--<ul class="nav-third-list">-->
+										<!--<li class="nav-third-item">-->
+											<!--<a class="nav-third-title" ui-sref="ELEOverview" ui-sref-active="active">概览</a>-->
+										<!--</li>-->
+										<!--<li class="nav-third-item">-->
+											<!--<a class="nav-third-title" ui-sref="ELEIOTPlatform" ui-sref-active="active">物联平台</a>-->
+										<!--</li>-->
+										<!--<li class="nav-third-item">-->
+											<!--<a class="nav-third-title" ui-sref="ELEDataAnalysis" ui-sref-active="active">数据分析</a>-->
+										<!--</li>-->
+										<!--<li class="nav-third-item">-->
+											<!--<a class="nav-third-title" ui-sref="ELEBusinessOperation" ui-sref-active="active">业务运营</a>-->
+										<!--</li>-->
+										<!--<li class="nav-third-item">-->
+											<!--<a class="nav-third-title" ui-sref="ELEVideoMonitor" ui-sref-active="active">视频监控</a>-->
+										<!--</li>-->
+									<!--</ul>-->
+								<!--</li>-->
+								<!--<li class="sec-item">-->
+									<!--<a class="sec-title">农林渔牧<span class="caret"></span></a>-->
+									<!--<ul class="nav-third-list">-->
+										<!--<li class="nav-third-item">-->
+											<!--<a class="nav-third-title" ui-sref="AGROverview" ui-sref-active="active">概览</a>-->
+										<!--</li>-->
+										<!--<li class="nav-third-item">-->
+											<!--<a class="nav-third-title" ui-sref="AGRIOTPlatform" ui-sref-active="active">物联平台</a>-->
+										<!--</li>-->
+										<!--<li class="nav-third-item">-->
+											<!--<a class="nav-third-title" ui-sref="AGRDataAnalysis" ui-sref-active="active">数据分析</a>-->
+										<!--</li>-->
+										<!--<li class="nav-third-item">-->
+											<!--<a class="nav-third-title" ui-sref="AGRBusinessOperation" ui-sref-active="active">业务运营</a>-->
+										<!--</li>-->
+										<!--<li class="nav-third-item">-->
+											<!--<a class="nav-third-title" ui-sref="AGRVideoMonitor" ui-sref-active="active">视频监控</a>-->
+										<!--</li>-->
+									<!--</ul>-->
+								<!--</li>-->
+							<!--</ul>-->
+						<!--</li>-->
+
+						<!--<li class="nav-item">-->
+							<!--<a class="nav-title" ui-sref="mySpace" ui-sref-active="active" ng-if="vm.session.getObject('userInfo').isLogin == '1'" ui-sref-opts="{reload:true}">我的空间</a>-->
+						<!--</li>-->
+
+						<!--<li class="nav-item">-->
+							<!--<a class="nav-title">关于我们<span class="caret"></span></a>-->
+							<!--<ul class="nav-sec-list">-->
+								<!--<li class="sec-item">-->
+									<!--<a class="sec-title" ui-sref="AUsAboutUs" ui-sref-active="active">关于我们</span></a>-->
+								<!--</li>-->
+								<!--<li class="sec-item">-->
+									<!--<a class="sec-title" ui-sref="contactUs" ui-sref-active="active">联系我们</a>-->
+								<!--</li>-->
+								<!--<li class="sec-item">-->
+									<!--<a class="sec-title" ui-sref="qualificationCertificate" ui-sref-active="active">资质证书</a>-->
+								<!--</li>-->
+								<!--<li class="sec-item">-->
+									<!--<a class="sec-title" ui-sref="cooperationMode" ui-sref-active="active">合作方式</a>-->
+								<!--</li>-->
+							<!--</ul>-->
+						<!--</li>-->
+						<!--<li class="nav-item">-->
+							<!--<a class="nav-title" ui-sref="pageManagement" ui-sref-active="active" ng-if="vm.session.getObject('userInfo').isLogin == '1'">页面管理</a>-->
+						<!--</li>-->
+						<!--<li class="nav-item">-->
+							<!--<a class="nav-title" ui-sref="unityWebGL" ui-sref-active="active">unity3D</a>-->
+						<!--</li>-->
+					<!--</ul>-->
+
+
+				<!--</div>-->
+				<!--<div class="col-sm-3"></div>&ndash;&gt;-->
+			<!--</div>-->
+		<!--</div>-->
+	<!--</header>-->
+	<!--<section ui-view=""></section>-->
+<!--</div>-->
+
+<!--<div class="wrapper">
+    <header class="header">
+    	<div class="container">
+    		<div class="row">
+    			<div class="col-sm-6">123</div>
+    			<div class="col-sm-6">456</div>
+    		</div>
+    	</div>
+        <ul class="navigation">
+            <li><a ui-sref="home">主页</a></li>
+            <li><a ui-sref="demo">常用指令demo使用</a></li>
+        </ul>
+    </header>
+    <section class="main" ui-view="">
+    </section>
+    <footer class="footer">copyright© silence</footer>
+</div>-->
+<div class="header">
+<header><img src="/images/login/login_logo.png"><ul><li><a>系统首页</a></li></ul></header>
+<ui-view></ui-view>
+</div>

@@ -1,0 +1,1 @@
+!function(e){function a(e){var a={abstract:!0,url:"/deviceList",views:{"":{templateUrl:"./app/manager/deviceList/index.html"}}};e.state("manager.deviceList",a)}e.module("app.managerModule.deviceList").config(a),a.$inject=["$stateProvider"]}(window.angular);

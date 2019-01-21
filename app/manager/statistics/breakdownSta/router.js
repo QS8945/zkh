@@ -1,0 +1,1 @@
+!function(a){function t(a){var t={url:"/breakdownSta",views:{"":{templateUrl:"./app/manager/statistics/breakdownSta/index.html",controller:"BreakdownStaController",controllerAs:"vm"}}};a.state("manager.statistics.breakdownSta",t)}a.module("app.managerModule.statistics.breakdownSta").config(t),t.$inject=["$stateProvider"]}(window.angular);

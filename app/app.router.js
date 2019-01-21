@@ -1,0 +1,1 @@
+!function(o){function i(o,i){i.hashPrefix(""),o.otherwise("/offical/home")}o.module("app").config(i),i.$inject=["$urlRouterProvider","$locationProvider"]}(window.angular);

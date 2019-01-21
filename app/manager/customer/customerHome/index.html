@@ -1,0 +1,72 @@
+<div class="content customer">
+    <div class="m-header"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>&nbsp;&nbsp;当前位置&nbsp;:&nbsp;客户管理
+    </div>
+    <div class="m-body">
+        <div class="m-body-title">客户管理<a class="title-btn" ng-click="vm.initTools.add()">新增 <span
+                class="glyphicon glyphicon-plus-sign"></span></a>
+        </div>
+        <form ng-keypress="vm.initTools.keyup($event)" autocomplete="off">
+            <div class="form-item">
+                <label for="companyName"><span class="glyphicon glyphicon-search"></span></label>
+                <input style="display:none">
+                <input type="text" placeholder="输入公司名称" id="companyName" name="companyName" ng-model="vm.initTools.companyName">
+            </div>
+            <div class="form-item">
+                <select id="status" name="status" ng-model="vm.initTools.status"
+                        ng-options="status.id as status.name for status in vm.initTools.statuses"
+                        class="form-control" required>
+                    <!--<option value="0">请选择</option>-->
+                </select>
+            </div>
+            <!--<div class="form-item">-->
+            <!--<label for="dateFrom"><span class="glyphicon glyphicon-calendar"></span></label><input class="date-from"-->
+            <!--type="date"-->
+            <!--id="dateFrom"-->
+            <!--name="dateFrom"-->
+            <!--placeholder="起始日期">-->
+            <!--</div>-->
+            <a class="form-btn" ng-click="vm.initTools.searchUsers()">搜索</a>
+        </form>
+        <table class="content-table">
+            <thead>
+            <th class="col-sm-1">序号</th>
+            <th class="col-sm-1">公司名称</th>
+            <!--<th class="col-sm-1">公司电话</th>-->
+            <th class="col-sm-1">公司地址</th>
+            <th class="col-sm-1">启用状态</th>
+            <!--<th class="col-sm-1">登录地址</th>-->
+            <th class="col-sm-1">联系人</th>
+            <th class="col-sm-1">联系人电话</th>
+            <th class="col-sm-1">注册时间</th>
+            <th class="col-sm-1">操作</th>
+            </thead>
+            <tbody>
+            <tr ng-repeat="data in vm.initTools.customersData">
+                <td><span class="form-number">{{(vm.initTools.pageNo-1)*vm.initTools.pageSize+$index+1}}</span></td>
+                <td>{{data.companyName}}</td>
+                <!--<td>{{data.extend.extendS1.companyTel}}</td>-->
+                <td>{{data.extend.extendS1.companyAddress}}</td>
+                <td>{{data.status==='0' ? '启用':'禁止'}}</td>
+                <!--<td>{{data.extend.extendS1.loginAddress}}</td>-->
+                <td>{{data.extend.extendS1.responsiblePersonList[0].responsiblePerson}}</td>
+                <td>{{data.extend.extendS1.responsiblePersonList[0].responsibleTel}}</td>
+                <td>{{data.createDate|date : 'yyyy-MM-dd hh:mm:ss'}}</td>
+                <td><a class="table-btn btn-edit" title="编辑" ng-click="vm.initTools.edit($index)"><span
+                        class="glyphicon glyphicon-edit"></span></a>
+                    <a class="table-btn btn-sign" title="查看" ng-click="vm.initTools.checkItem($index)"><span
+                            class="glyphicon glyphicon-ok-sign"></span></a>
+                    <a class="table-btn btn-lock" title="{{data.status==0?'禁用':'启用'}}" ng-click="vm.initTools.disable($index)"><i
+                            class="fa" ng-class="{'fa-unlock':data.status==2,'fa-lock':data.status==0}"></i></a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="footer-page"><span class="page-set">总共 {{vm.initTools.totalNum}} 条 每页显示<select ng-change="vm.initTools.searchUsers()"
+                name="pageType" id="pageType"
+                ng-model="vm.initTools.pageSizeStatic">
+            <option ng-repeat="pageType in vm.initTools.pageTypes">{{pageType}}</option>
+        </select>条</span>
+            <div id="Pagination" align="center"></div>
+        </div>
+    </div>
+</div>

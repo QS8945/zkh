@@ -1,0 +1,1 @@
+!function(e){e.module("app.managerModule.deviceList",["app.managerModule.deviceList.listShow","app.managerModule.deviceList.details"])}(window.angular);

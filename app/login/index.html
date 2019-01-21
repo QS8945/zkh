@@ -1,0 +1,105 @@
+<div class="login">
+    <!--<header class="container top-title"></header>-->
+    <div class="top-title">
+        <div class="container">
+            <!--<span ng-if="vm.session.getLocalObject('userInfo').isLogin=='0'"><img src="/images/login/icon-us.png">&nbsp;登录</span>-->&nbsp;&nbsp;&nbsp;<span
+                class="margin-title" ng-if="vm.session.getLocalObject('userInfo').isLogin  == '1'"
+                ng-click="vm.COMMONJS.cancel()"><img src="/images/login/icon-reg.png">&nbsp;注销</span><span
+                ng-hide="vm.session.getLocalObject('userInfo').isLogin == '0'"
+                class="margin-title" ui-sref="manager.home">管理后台</span><span>400-993-8251 &nbsp;<a class="header-btn"
+                                                                                                  href="tel:123456789"><span><img
+                src="/images/login/icon-mobile.png"></span></a></span></div>
+    </div>
+    <header class="container"><span class="logo-name"><img src="/images/login/login_logo.png"></span><span
+            class="header-title">欢迎登录震坤行物联网管理平台</span><a class="header-btn" ui-sref="offical.home"><span>返回首页</span></a>
+    </header>
+    <section>
+        <div class="container">
+            <div class="sec-body">
+                <!--<article>-->
+                <!--<div class="art-title">2018</div>-->
+                <!--<div class="art-title">局势聚焦 深刻速度</div>-->
+                <!--<div>成为客户体验最好的工业用品服务平台</div>-->
+                <!--</article>-->
+                <form id="loginForm" name="loginForm" ng-keypress="vm.initTools.keyup($event)"
+                      ng-hide="vm.session.getLocalObject('userInfo').isLogin == '1'">
+                    <div class="form-title"><span>用户</span>登录</div>
+                    <div class="form-input">
+                        <label for="login-name"><img src="/images/login/icon-ipus.png"></label><input
+                            style="display:none"><input id="login-name" name="login-name"
+                                                        ng-model="vm.initTools.loginName"
+                                                        placeholder="账号/手机/邮箱" type="text"
+                                                        onkeypress="javascript:if(event.keyCode == 32)event.returnValue = false;"
+                                                        ng-class="{'ng-invalid':loginForm.loginName.$invalid}" required>
+                    </div>
+                    <div class="form-input form-code">
+                        <label for="login-pwd"><img src="/images/login/icon-ippwd.png"></label><input
+                            style="display:none"><input id="login-pwd" name="login-pwd"
+                                                        ng-model="vm.initTools.loginPwd"
+                                                        placeholder="密码" type="password"
+                                                        onkeypress="javascript:if(event.keyCode == 32)event.returnValue = false;"
+                                                        ng-class="{'ng-invalid':loginForm.loginPwd.$invalid}" required>
+                    </div>
+                    <!--<div class="form-input form-code"><input id="login-code" name="login-code" type="tel"-->
+                    <!--ng-model="vm.initTools.loginCode"-->
+                    <!--onkeypress="javascript:if(event.keyCode == 32)event.returnValue = false;"-->
+                    <!--ng-class="{'ng-invalid':loginForm.loginCode.$invalid}"-->
+                    <!--ng-minlength="4" ng-maxlength="4" required><img-->
+                    <!--ng-click="vm.initTools.getCode()" class="img-code" ng-src="{{vm.initTools.imgCode}}"></div>-->
+                    <div class="form-remember"><input type="checkbox" name="rememberAccount" id="rememberAccount"
+                                                      ng-model="vm.initTools.rememberAccount"><label
+                            for="rememberAccount">&nbsp;记住账号</label><a>忘记密码</a></div>
+                    <a class="btn btn-danger" ng-click="vm.initTools.login()">登录</a>
+                    <div class="form-footer">还不是会员&nbsp;?&nbsp;<a>联系我</a></div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="footer-all">
+                <div>
+                    <div class="footer-title">震坤行工业超市（上海）有限公司</div>
+                    <div class="footer-body">
+                        <div><span><img src="/images/login/icon-phone.png"></span>&nbsp;&nbsp;联系电话&nbsp;:&nbsp;400-993-8251
+                        </div>
+                        <div><span><img src="/images/login/icon-email.png"></span>&nbsp;&nbsp;公司邮箱&nbsp;:&nbsp;info@zkh360.com
+                        </div>
+                        <div><span><img src="/images/login/icon-map.png"></span>&nbsp;&nbsp;公司地址&nbsp;:&nbsp;上海市浦东新区科苑路399号5号楼
+                        </div>
+                        <div><span><img src="/images/login/icon-tel.png"></span>&nbsp;&nbsp;营业时间&nbsp;:&nbsp;周一至周五&nbsp;|&nbsp;8:30-17:30
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="about-us-title">关于我们</div>
+                    <div class="footer-body">
+                        <div><a>公司介绍</a></div>
+                        <div><a>发展进程</a></div>
+                        <div><a>联系我们</a></div>
+                        <div><a>意见反馈</a></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="about-us-title">产品服务</div>
+                    <div class="footer-body">
+                        <div><a>产品列表</a></div>
+                        <div><a>解决方案</a></div>
+                        <div><a>服务与支持</a></div>
+                    </div>
+                </div>
+                <!--<div>-->
+                <!--<img src="/images/login/icon-app.png">-->
+                <!--<div class="text-center">APP应用下载</div>-->
+                <!--</div>-->
+            </div>
+            <div class="friend-link">
+                友情链接: <a>中国自动化网</a> <a>呼叫中心系统</a> <a>中国锅炉网</a> <a>云呼叫中心</a> <a>中国空压机网</a>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>Copyright<em>©</em> zkh360.com 1998 - 2018 Corporation All Rights Reserved <a
+                    href="http://www.miitbeian.gov.cn/">沪ICP备10006078号-5</a></p>
+        </div>
+    </footer>
+</div>

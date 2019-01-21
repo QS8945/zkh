@@ -1,0 +1,256 @@
+<div class="content userOpt">
+    <div class="m-header"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>&nbsp;&nbsp;当前位置&nbsp;:&nbsp;<span
+            class="m-header-router" onclick="javascript:history.go(-1)">设备监控</span>&nbsp;/&nbsp;{{vm.initTools.title}}
+    </div>
+    <div class="m-body">
+        <form autocomplete="off" name="deviceOpt" id="deviceOpt">
+            <div class="item-opt clearfix">
+                <label class="col-sm-4 item-title" for="companyCode"><span class="star-red">*&nbsp;</span>所属客户&nbsp;:&nbsp;</label>
+                <div class="item-input col-sm-8">
+
+                    <select id="companyCode" name="companyCode" ng-model="vm.initTools.item.extend.extendS1.companyCode"
+                            ng-options="item.companyCode as item.companyName for item in vm.initTools.companyListData"
+                            class="form-control" ng-change="vm.initTools.getIotStationListData(vm.initTools.item.extend.extendS1.companyCode)" required>
+                        <!--<option value="0">请选择</option>-->
+                    </select>
+                </div>
+            </div>
+            <div class="item-opt clearfix">
+                <label class="col-sm-4 item-title" for="iotStationId"><span class="star-red">*&nbsp;</span>所属空压站&nbsp;:&nbsp;</label>
+                <div class="item-input col-sm-8">
+
+                    <select id="iotStationId" name="iotStationId" ng-model="vm.initTools.item.iotStationId"
+                            ng-options="item.id as item.detailJson.name for item in vm.initTools.iotStationListData"
+                            class="form-control" required>
+                        <!--<option value="0">请选择</option>-->
+                    </select>
+                </div>
+            </div>
+            <div class="item-opt clearfix">
+                <label class="col-sm-4 item-title" for="userName"><span class="star-red">*&nbsp;</span>空压机名称&nbsp;:&nbsp;</label>
+                <div class="item-input col-sm-8"><input type="text" name="userName" id="userName" class="form-control"
+                                                        ng-model="vm.initTools.item.name"
+                                                        onkeypress="javascript:if(event.keyCode == 32)event.returnValue = false;"
+                                                        ng-class="{'ng-invalid':deviceOpt.userName.$invalid}"
+                                                        required>
+                </div>
+            </div>
+            <div class="item-opt clearfix">
+                <label class="col-sm-4 item-title" for="compressorNum">空压机序列号&nbsp;:&nbsp;</label>
+                <div class="item-input col-sm-8"><input type="text" name="compressorNum" id="compressorNum"
+                                                        class="form-control"
+                                                        ng-model="vm.initTools.item.extend.extendS1.compressorNum"
+                                                        onkeypress="javascript:if(event.keyCode == 32)event.returnValue = false;"
+                                                        ng-class="{'ng-invalid':deviceOpt.loginCode.$invalid}">
+                </div>
+            </div>
+            <div class="item-opt clearfix">
+                <label class="col-sm-4 item-title" for="compressorBrand"><span class="star-red">*&nbsp;</span>空压机品牌&nbsp;:&nbsp;</label>
+                <div class="item-input col-sm-8">
+
+                    <select id="compressorBrand" name="compressorBrand"
+                            ng-model="vm.initTools.item.extend.extendS1.compressorBrand"
+                            ng-options="compressorBrand.id as compressorBrand.name for compressorBrand in vm.initTools.compressorBrands"
+                            class="form-control" required>
+                        <!--<option value="0">请选择</option>-->
+                    </select>
+                </div>
+            </div>
+            <div class="item-opt clearfix">
+                <label class="col-sm-4 item-title" for="compressorModel"><span class="star-red">*&nbsp;</span>空压机型号&nbsp;:&nbsp;</label>
+                <div class="item-input col-sm-8">
+
+                    <select id="compressorModel" name="compressorModel"
+                            ng-model="vm.initTools.item.extend.extendS1.compressorModel"
+                            ng-options="compressorModel.id as compressorModel.name for compressorModel in vm.initTools.compressorModels"
+                            class="form-control" required>
+                    </select>
+                </div>
+            </div>
+            <div class="item-opt clearfix">
+                <label class="col-sm-4 item-title" for="compressor"><span class="star-red">*&nbsp;</span>设备类型&nbsp;:&nbsp;</label>
+                <div class="item-input col-sm-8">
+
+                    <select id="compressor" name="compressor" ng-model="vm.initTools.item.extend.extendS1.compressor"
+                            ng-options="compressor.id as compressor.name for compressor in vm.initTools.compressors"
+                            class="form-control" required>
+                        <!--<option value="0">请选择</option>-->
+                    </select>
+                </div>
+            </div>
+            <div class="item-opt clearfix">
+                <label class="col-sm-4 item-title" for="ratedPower">额定功率&nbsp;:&nbsp;</label>
+                <div class="item-input col-sm-8"><input type="text" name="ratedPower" id="ratedPower"
+                                                        class="form-control"
+                                                        ng-model="vm.initTools.item.extend.extendS1.ratedPower"
+                                                        onkeypress="javascript:if(event.keyCode == 32)event.returnValue = false;"
+                                                        ng-class="{'ng-invalid':deviceOpt.ratedPower.$invalid}">
+                </div>
+            </div>
+            <div class="item-opt clearfix">
+                <label class="col-sm-4 item-title" for="controllerType">控制器类型&nbsp;:&nbsp;</label>
+                <div class="item-input col-sm-8">
+
+                    <select id="controllerType" name="controllerType"
+                            ng-model="vm.initTools.item.extend.extendS1.controllerType"
+                            ng-options="controllerType.id as controllerType.name for controllerType in vm.initTools.controllerTypes"
+                            class="form-control">
+                    </select>
+                </div>
+            </div>
+            <div class="item-opt clearfix">
+                <label class="col-sm-4 item-title" for="dischargeVolume">排气量&nbsp;:&nbsp;</label>
+                <div class="item-input col-sm-8"><input type="text" name="dischargeVolume" id="dischargeVolume"
+                                                        class="form-control"
+                                                        ng-model="vm.initTools.item.extend.extendS1.dischargeVolume"
+                                                        onkeypress="javascript:if(event.keyCode == 32)event.returnValue = false;"
+                                                        ng-class="{'ng-invalid':deviceOpt.dischargeVolume.$invalid}">
+                </div>
+            </div>
+
+            <!--<div class="item-opt clearfix">-->
+                <!--<label class="col-sm-4 item-title" for="noseType"><span class="star-red">*&nbsp;</span>机头类型&nbsp;:&nbsp;</label>-->
+                <!--<div class="item-input col-sm-8">-->
+                    <!--<select id="noseType" name="noseType" ng-model="vm.initTools.item.extend.extendS1.noseType"-->
+                            <!--ng-options="noseType.id as noseType.name for noseType in vm.initTools.noseTypes"-->
+                            <!--class="form-control" required>-->
+                    <!--</select>-->
+                <!--</div>-->
+            <!--</div>-->
+
+            <div class="item-opt clearfix">
+                <label class="col-sm-4 item-title" for="frequency"><span class="star-red">*&nbsp;</span>变频/工频&nbsp;:&nbsp;</label>
+                <div class="item-input col-sm-8">
+
+                    <select id="frequency" name="frequency" ng-model="vm.initTools.item.extend.extendS1.frequency"
+                            ng-options="frequency.id as frequency.name for frequency in vm.initTools.frequencies"
+                            class="form-control" ng-class="{'ng-invalid':vm.initTools.userProvince == '0'}"
+                            ng-change="vm.initTools.getUserCities()" required>
+                    </select>
+                </div>
+            </div>
+
+            <div class="item-opt clearfix">
+                <label class="col-sm-4 item-title" for="devicestatus"><span class="star-red">*&nbsp;</span>设备状态&nbsp;:&nbsp;</label>
+                <div class="item-input col-sm-8">
+
+                    <select id="devicestatus" name="devicestatus"
+                            ng-model="vm.initTools.item.extend.extendS1.devicestatus"
+                            ng-options="devicestatus.id as devicestatus.name for devicestatus in vm.initTools.devicestatuses"
+                            class="form-control" required>
+                    </select>
+                </div>
+            </div>
+
+            <div class="item-opt clearfix">
+                <label class="col-sm-4 item-title" for="collectorType"><span class="star-red">*&nbsp;</span>采集器型号&nbsp;:&nbsp;</label>
+                <div class="item-input col-sm-8">
+
+                    <select id="collectorType" name="collectorType"
+                            ng-model="vm.initTools.item.extend.extendS1.collectorType"
+                            ng-options="collectorType.id as collectorType.name for collectorType in vm.initTools.collectorTypes"
+                            class="form-control" required>
+                    </select>
+                </div>
+            </div>
+
+            <div class="item-opt clearfix">
+                <label class="col-sm-4 item-title" for="collectorNo"><span class="star-red">*&nbsp;</span>采集器序列号&nbsp;:&nbsp;</label>
+                <div class="item-input col-sm-8">
+
+                    <select id="collectorNo" name="collectorNo" ng-model="vm.initTools.item.extend.extendS1.collectorNo"
+                            ng-options="collectorNo.id as collectorNo.name for collectorNo in vm.initTools.collectorNos"
+                            class="form-control" required>
+                    </select>
+                </div>
+            </div>
+
+            <div class="item-opt clearfix">
+                <label class="col-sm-4 item-title"><span class="star-red">*&nbsp;</span>出厂日期&nbsp;:&nbsp;</label>
+                <div class="item-input col-sm-8">
+                    <input type="text" id="productionDate" name="productionDate" ng-model="vm.initTools.item.extend.extendS1.productionDate" required>
+                    <!--<input class="date-from" type="date" id="productionDate" name="productionDate" ng-model="vm.initTools.item.extend.extendS1.productionDate" required>-->
+                </div>
+            </div>
+
+            <div class="item-opt clearfix">
+                <label class="col-sm-4 item-title"><span class="star-red">*&nbsp;</span>安装日期&nbsp;:&nbsp;</label>
+                <div class="item-input col-sm-8">
+
+                    <input type="text" id="installDate"  name="installDate" ng-model="vm.initTools.item.extend.extendS1.installDate" required>
+
+                    <!--<input class="date-from" type="date" id="installDate" name="installDate" ng-model="vm.initTools.item.extend.extendS1.installDate" required>-->
+
+                    <!--<select id="userProvince" name="userProvince" ng-model="vm.initTools.item.extend.extendS1.userProvince"-->
+                    <!--ng-options="province.id as province.name for province in vm.initTools.provinces"-->
+                    <!--class="form-control" ng-class="{'ng-invalid':vm.initTools.userProvince == '0'}"-->
+                    <!--ng-change="vm.initTools.getUserCities()" required>-->
+                    <!--</select>-->
+                </div>
+            </div>
+
+            <div class="item-opt clearfix">
+                <label class="col-sm-4 item-title"><span class="star-red">*&nbsp;</span>开机日期&nbsp;:&nbsp;</label>
+                <div class="item-input col-sm-8">
+                    <input type="text" id="turnOnDate"  name="turnOnDate" ng-model="vm.initTools.item.extend.extendS1.turnOnDate" required>
+
+                    <!--<input class="date-from" type="date" id="turnOnDate" name="turnOnDate" ng-model="vm.initTools.item.extend.extendS1.turnOnDate" required>-->
+
+                    <!--<select id="userProvince" name="userProvince" ng-model="vm.initTools.item.extend.extendS1.userProvince"-->
+                    <!--ng-options="province.id as province.name for province in vm.initTools.provinces"-->
+                    <!--class="form-control" ng-class="{'ng-invalid':vm.initTools.userProvince == '0'}"-->
+                    <!--ng-change="vm.initTools.getUserCities()" required>-->
+                    <!--</select>-->
+                </div>
+            </div>
+            <div class="item-opt clearfix">
+                <label class="col-sm-4 item-title" for="contact"><span class="star-red">*&nbsp;</span>联系人&nbsp;:&nbsp;</label>
+                <div class="item-input col-sm-8">
+                    <input type="text" name="contact" id="contact" class="form-control"
+                           ng-model="vm.initTools.item.extend.extendS1.responsiblePerson"
+                           onkeypress="javascript:if(event.keyCode == 32)event.returnValue = false;"
+                           ng-class="{'ng-invalid':deviceOpt.loginCode.$invalid}"
+                           required>
+                </div>
+            </div>
+            <div class="item-opt clearfix">
+                <label class="col-sm-4 item-title" for="telephone"><span class="star-red">*&nbsp;</span>联系电话&nbsp;:&nbsp;</label>
+                <div class="item-input col-sm-8"><input type="tel"
+                                                        ng-pattern="/^[1](([3][0-9])|([4][5,7,9])|([5][4,6,9])|([6][6])|([7][3,5,6,7,8])|([8][0-9])|([9][8,9]))[0-9]{8}$/"
+                                                        name="telephone" id="telephone" class="form-control"
+                                                        ng-model="vm.initTools.item.extend.extendS1.responsibleTel"
+                                                        onkeypress="javascript:if(event.keyCode == 32)event.returnValue = false;"
+                                                        ng-class="{'ng-invalid':deviceOpt.loginCode.$invalid}"
+                                                        required>
+                </div>
+            </div>
+            <!--<div class="item-opt clearfix">-->
+                <!--<label class="col-sm-4 item-title" for="registrationCode"><span class="star-red">*&nbsp;</span>硬件注册码&nbsp;:&nbsp;</label>-->
+                <!--<div class="item-input col-sm-8"><input type="text" name="registrationCode" id="registrationCode" class="form-control"-->
+                                                        <!--ng-model="vm.initTools.item.extend.extendS1.registrationCode"-->
+                                                        <!--onkeypress="javascript:if(event.keyCode == 32)event.returnValue = false;"-->
+                                                        <!--ng-class="{'ng-invalid':deviceOpt.registrationCode.$invalid}"-->
+                                                        <!--required>-->
+                <!--</div>-->
+            <!--</div>-->
+            <div class="item-opt clearfix">
+                <label class="col-sm-4 item-title"><span class="star-red">*&nbsp;</span>上传图片&nbsp;:&nbsp;</label>
+                <div class="item-input col-sm-8 clearfix">
+                    <input type="file" ng-model="vm.initTools.iconFile" name="iconFile" id="iconFile"
+                           onchange="angular.element(this).scope().vm.initTools.uploadIcon(this)"/>
+                    <div class="p-hover clearfix">
+                        <img id="previewImg" name="previewImg" ng-src="{{vm.initTools.item.previewImg}}" ng-show="vm.initTools.item.previewImg"/>
+                        <div class="overlay-hover" ng-click="vm.initTools.removeImg()"><span class="glyphicon glyphicon-trash"></span></div>
+                    </div>
+                    <button class="btn btn-info btn-upload form-control" ng-if="!vm.initTools.item.previewImg"
+                            ng-click="vm.initTools.uploadClick()">上传
+                    </button>
+                </div>
+            </div>
+            <div class="item-opt item-save clearfix">
+                <button class="btn btn-info btn-upload form-control btn-save" ng-click="vm.initTools.saveForm()">保存</button>
+                <button class="btn btn-info btn-upload form-control" onclick="javascript:history.go(-1)">返回</button>
+            </div>
+        </form>
+    </div>
+</div>

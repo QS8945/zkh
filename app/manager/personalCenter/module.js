@@ -1,0 +1,1 @@
+!function(n){n.module("app.managerModule.personalCenter",[])}(window.angular);

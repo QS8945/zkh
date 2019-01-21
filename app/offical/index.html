@@ -1,0 +1,87 @@
+<div class="offical">
+    <!--<header class="container top-title"></header>-->
+    <div class="top-title">
+        <div class="container">
+            <span ng-if="vm.session.getLocalObject('userInfo').isLogin=='0'" ui-sref="login"><img
+                    src="/images/login/icon-us.png">&nbsp;登录</span>&nbsp;&nbsp;&nbsp;<span
+                class="margin-title" ng-if="vm.session.getLocalObject('userInfo').isLogin  == '1'"
+                ng-click="vm.COMMONJS.cancel()"><img src="/images/login/icon-reg.png">&nbsp;注销</span><span
+                ng-if="vm.session.getLocalObject('userInfo').isLogin == '1'"
+                class="margin-title" ui-sref="manager.home">管理后台</span><span>400-993-8251 &nbsp;&nbsp;&nbsp;<a
+                class="header-btn"
+                href="tel:123456789"><span class="glyphicon glyphicon-earphone"></span></a></span></div>
+    </div>
+    <header class="l-header"> <!--data-spy="affix" data-offset-top="160" data-offset-bottom="0"-->
+        <div class="container">
+            <a ui-sref="offical.home" href="#" class="logo-name"><img src="/images/login/login_logo.png"></a>
+            <a class="header-btn" ui-sref="offical.home" ui-sref-active="active"><span>首页</span></a>
+            <a class="header-btn" ui-sref="offical.product" ui-sref-active="active"><span>产品中心</span></a>
+            <a class="header-btn" ui-sref="offical.solution" ui-sref-active="active"><span>解决方案</span></a>
+            <a class="header-btn" ui-sref="offical.join" ui-sref-active="active"><span>招商加盟</span></a>
+            <a class="header-btn" ui-sref="offical.service" ui-sref-active="active"><span>售后服务</span></a>
+            <!--<a class="header-btn"><span>关于我们</span></a>-->
+        </div>
+    </header>
+    <section>
+        <ui-view></ui-view>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="footer-all">
+                <div>
+                    <div class="footer-title">
+                        <a href="#" class="logo-name"><img src="/images/offical/logo-zkh.png">&nbsp;&nbsp;&nbsp;工业超市</a>
+                    </div>
+                    <div class="footer-body">
+                        <div><span><img src="/images/login/icon-phone.png"></span>&nbsp;&nbsp;联系电话&nbsp;:&nbsp;400-993-8251
+                        </div>
+                        <div><span><img src="/images/login/icon-email.png"></span>&nbsp;&nbsp;公司邮箱&nbsp;:&nbsp;info@zkh360.com
+                        </div>
+                        <div><span><img src="/images/login/icon-map.png"></span>&nbsp;&nbsp;公司地址&nbsp;:&nbsp;上海市浦东新区科苑路399号5号楼
+                        </div>
+                        <div><span><img src="/images/login/icon-tel.png"></span>&nbsp;&nbsp;营业时间&nbsp;:&nbsp;周一至周五&nbsp;|&nbsp;8:30-17:30
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="about-us-title">产品中心</div>
+                    <div class="footer-body">
+                        <div><a>空压机</a></div>
+                        <div><a>冷干机</a></div>
+                        <div><a>联控机床</a></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="about-us-title">解决方案</div>
+                    <div class="footer-body">
+                        <div><a>空压机租赁</a></div>
+                        <div><a>整机售卖</a></div>
+                        <div><a>二手回收</a></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="about-us-title">关于我们</div>
+                    <div class="footer-body">
+                        <div><a>公司介绍</a></div>
+                        <div><a>新闻动态</a></div>
+                        <div><a>视频展示</a></div>
+                        <div><a>意见反馈</a></div>
+                        <div><a>联系我们</a></div>
+                    </div>
+                </div>
+                <!--<div>-->
+                <!--<img src="/images/login/icon-app.png">-->
+                <!--<div class="text-center">APP应用下载</div>-->
+                <!--</div>-->
+            </div>
+            <div class="friend-link">
+                友情链接: <a>中国自动化网</a> <a>呼叫中心系统</a> <a>中国锅炉网</a> <a>云呼叫中心</a> <a>中国空压机网</a>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>Copyright<em>©</em> zkh360.com 1998 - 2018 Corporation All Rights Reserved <a
+                    href="http://www.miitbeian.gov.cn/">沪ICP备10006078号-5</a></p>
+        </div>
+    </footer>
+    <back-to-top class="back_top" title="返回顶部">TOP</back-to-top>
+</div>

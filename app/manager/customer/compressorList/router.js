@@ -1,0 +1,1 @@
+!function(r){function o(r){var o={url:"/compressorList/:id/",views:{"":{templateUrl:"./app/manager/customer/compressorList/index.html",controller:"CompressorList",controllerAs:"vm"}}};r.state("manager.customer.compressorList",o)}r.module("app.managerModule.customer.compressorList").config(o),o.$inject=["$stateProvider"]}(window.angular);

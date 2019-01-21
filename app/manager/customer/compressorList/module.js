@@ -1,0 +1,1 @@
+!function(o){o.module("app.managerModule.customer.compressorList",[])}(window.angular);

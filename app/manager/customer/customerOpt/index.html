@@ -1,0 +1,234 @@
+<div class="content userOpt">
+    <div class="m-header"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>&nbsp;&nbsp;当前位置&nbsp;:&nbsp;<span
+            class="m-header-router" onclick="javascript:history.go(-1)">客户管理</span>&nbsp;/&nbsp;{{vm.initTools.title}}
+    </div>
+    <div class="m-body">
+        <form autocomplete="off" name="customerOpt" id="customerOpt" onkeydown="if(event.keyCode==13) return false;">
+            <div class="item-opt clearfix">
+                <label class="col-sm-4 item-title" for="userName"><span class="star-red">*&nbsp;</span>客户类型&nbsp;:&nbsp;</label>
+                <div class="item-input col-sm-8">
+                    <div class="col-sm-6">
+                        <label class="radio-label">
+                            <input ng-change="vm.initTools.getCompanyTypes()" type="radio"
+                                   ng-model="vm.initTools.item.companyType" name="groupType" value="0">集团
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" ng-model="vm.initTools.item.companyType" name="groupType" value="1">非集团
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="item-opt clearfix" ng-if="vm.initTools.item.companyType=='0'">
+                <label class="col-sm-4 item-title" for="userProvince"><span class="star-red">*&nbsp;</span>父级客户&nbsp;:&nbsp;</label>
+                <div class="item-input col-sm-8">
+
+                    <select id="parentCode" name="parentCode"
+                            ng-model="vm.initTools.item.parentCode"
+                            class="form-control">
+                        <option value="0"></option>
+                        <option value="{{companyType.companyCode}}"
+                                ng-repeat="companyType in vm.initTools.companyTypes">{{companyType.companyName}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div class="item-opt clearfix">
+                <label class="col-sm-4 item-title" for="userName"><span class="star-red">*&nbsp;</span>客户名称&nbsp;:&nbsp;</label>
+                <div class="item-input col-sm-8"><input type="text" name="userName" id="userName" class="form-control"
+                                                        ng-model="vm.initTools.item.companyName"
+                                                        onkeypress="javascript:if(event.keyCode == 32)event.returnValue = false;"
+                                                        ng-class="{'ng-invalid':customerOpt.loginCode.$invalid}"
+                                                        required>
+                </div>
+            </div>
+            <div class="item-opt clearfix">
+                <label class="col-sm-4 item-title" for="userNickname">客户简称&nbsp;:&nbsp;</label>
+                <div class="item-input col-sm-8"><input type="text" name="userNickname" id="userNickname"
+                                                        class="form-control"
+                                                        ng-model="vm.initTools.item.extend.extendS1.fullName"
+                                                        onkeypress="javascript:if(event.keyCode == 32)event.returnValue = false;"
+                                                        ng-class="{'ng-invalid':customerOpt.loginCode.$invalid}">
+                </div>
+            </div>
+            <div class="item-opt clearfix">
+                <label class="col-sm-4 item-title" for="userProvince"><span class="star-red">*&nbsp;</span>省市&nbsp;:&nbsp;</label>
+                <div class="item-input col-sm-8">
+
+                    <select id="userProvince" name="userProvince"
+                            ng-model="vm.initTools.item.extend.extendS1.userProvince"
+                            ng-options="province.areaCode as province.areaName for province in vm.initTools.provinces"
+                            class="form-control" ng-class="{'ng-invalid':vm.initTools.userProvince == '0'}"
+                            ng-change="vm.initTools.getAreaListDataChange(vm.initTools.item.extend.extendS1.userProvince)"
+                            required>
+                    </select>
+                </div>
+            </div>
+            <div class="item-opt clearfix">
+                <label class="col-sm-4 item-title" for="userCity"><span
+                        class="star-red">*&nbsp;</span>城市&nbsp;:&nbsp;</label>
+                <div class="item-input col-sm-8">
+                    <select id="userCity" name="userCity" ng-model="vm.initTools.item.extend.extendS1.userCity"
+                            ng-options="city.areaCode as city.areaName for city in vm.initTools.cities"
+                            class="form-control"
+                            ng-change="vm.initTools.getAreaListDataChange(vm.initTools.item.extend.extendS1.userCity)"
+                            required>
+                        <!--<option value="0">请选择</option>-->
+                    </select>
+                    <!--<input type="text" name="city" id="city"-->
+                    <!--ng-model="vm.initTools.city"-->
+                    <!--onkeypress="javascript:if(event.keyCode == 32)event.returnValue = false;"-->
+                    <!--ng-class="{'ng-invalid':customerOpt.loginCode.$invalid}" required>-->
+                </div>
+            </div>
+            <div class="item-opt clearfix">
+                <label class="col-sm-4 item-title" for="userArea"><span
+                        class="star-red">*&nbsp;</span>区县&nbsp;:&nbsp;</label>
+                <div class="item-input col-sm-8">
+                    <select id="userArea" name="userArea" ng-model="vm.initTools.item.extend.extendS1.userArea"
+                            ng-options="area.areaCode as area.areaName for area in vm.initTools.areas"
+                            class="form-control" required>
+                        <!--<option value="0">请选择</option>-->
+                    </select>
+                    <!--<input type="text" name="area" id="area"-->
+                    <!--ng-model="vm.initTools.area"-->
+                    <!--onkeypress="javascript:if(event.keyCode == 32)event.returnValue = false;"-->
+                    <!--ng-class="{'ng-invalid':customerOpt.loginCode.$invalid}" required>-->
+                </div>
+            </div>
+            <div class="item-opt clearfix">
+                <label class="col-sm-4 item-title" for="address">地址&nbsp;:&nbsp;</label>
+                <div class="item-input col-sm-8"><input type="text" name="address" id="address" class="form-control"
+                                                        ng-model="vm.initTools.item.extend.extendS1.companyAddress"
+                                                        onkeypress="javascript:if(event.keyCode == 32)event.returnValue = false;"
+                                                        ng-class="{'ng-invalid':customerOpt.loginCode.$invalid}">
+                </div>
+            </div>
+            <div class="item-opt clearfix">
+                <label class="col-sm-4 item-title" for="companyTel">公司电话&nbsp;:&nbsp;</label>
+                <div class="item-input col-sm-8"><input type="tel" name="telephone" id="companyTel" class="form-control"
+                                                        ng-model="vm.initTools.item.extend.extendS1.companyTel"
+                                                        onkeypress="javascript:if(event.keyCode == 32)event.returnValue = false;"
+                                                        ng-class="{'ng-invalid':customerOpt.companyTel.$invalid}">
+                </div>
+            </div>
+
+            <div class="item-opt clearfix">
+                <label class="col-sm-4 item-title" for="contact">联系列表&nbsp;:&nbsp;</label>
+                <div class="item-input col-sm-8">
+                    <div class="contact-items clearfix"
+                         ng-repeat="item in vm.initTools.item.extend.extendS1.responsiblePersonList">
+                                <label class="item-title" for="contact"><span class="star-red">*&nbsp;</span>联系人&nbsp;:&nbsp;</label>
+                                <div class="item-input">
+                                    <input type="text" name="contact" id="contact" class="form-control"
+                                           ng-model="item.responsiblePerson"
+                                           onkeypress="javascript:if(event.keyCode == 32)event.returnValue = false;"
+                                           ng-class="{'ng-invalid':customerOpt.loginCode.$invalid}"
+                                           required>
+                                </div>
+                                <label class="item-title" for="telephone"><span class="star-red">*&nbsp;</span>联系电话&nbsp;:&nbsp;</label>
+                                <div class="item-input"><input type="tel"
+                                                                        ng-pattern="/^[1](([3][0-9])|([4][5,7,9])|([5][4,6,9])|([6][6])|([7][3,5,6,7,8])|([8][0-9])|([9][8,9]))[0-9]{8}$/"
+                                                                        name="telephone" id="telephone"
+                                                                        class="form-control"
+                                                                        ng-model="item.responsibleTel"
+                                                                        onkeypress="javascript:if(event.keyCode == 32)event.returnValue = false;"
+                                                                        ng-class="{'ng-invalid':customerOpt.loginCode.$invalid}"
+                                                                        required>
+                                </div>
+                                <a ng-click="vm.initTools.addContact()" ng-if="$index===0">
+                                    <li class="fa fa-plus-square"></li>
+                                </a>
+                                <a ng-click="vm.initTools.removeContact($index)" ng-if="$index!==0">
+                                    <li class="fa fa-minus-square"></li>
+                                </a>
+                    </div>
+                </div>
+            </div>
+            <!--<div class="item-opt clearfix">-->
+            <!--<label class="col-sm-4 item-title" for="telephone"><span class="star-red">*&nbsp;</span>联系电话&nbsp;:&nbsp;</label>-->
+            <!--<div class="item-input col-sm-8"><input type="tel"-->
+            <!--ng-pattern="/^[1](([3][0-9])|([4][5,7,9])|([5][4,6,9])|([6][6])|([7][3,5,6,7,8])|([8][0-9])|([9][8,9]))[0-9]{8}$/"-->
+            <!--name="telephone" id="telephone" class="form-control"-->
+            <!--ng-model="vm.initTools.item.extend.extendS1.responsibleTel"-->
+            <!--onkeypress="javascript:if(event.keyCode == 32)event.returnValue = false;"-->
+            <!--ng-class="{'ng-invalid':customerOpt.loginCode.$invalid}"-->
+            <!--required>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--<div class="item-opt clearfix">-->
+            <!--<label class="col-sm-4 item-title" for="wechat">微信&nbsp;:&nbsp;</label>-->
+            <!--<div class="item-input col-sm-8"><input type="text" name="wechat" id="wechat" class="form-control"-->
+            <!--ng-model="vm.initTools.wechat"-->
+            <!--onkeypress="javascript:if(event.keyCode == 32)event.returnValue = false;"-->
+            <!--ng-class="{'ng-invalid':customerOpt.loginCode.$invalid}" required>-->
+            <!--</div>-->
+            <!--</div>-->
+            <div class="item-opt clearfix">
+                <label class="col-sm-4 item-title" for="email">邮箱&nbsp;:&nbsp;</label>
+                <div class="item-input col-sm-8"><input type="email" name="email" id="email" class="form-control"
+                                                        ng-model="vm.initTools.item.extend.extendS1.email"
+                                                        onkeypress="javascript:if(event.keyCode == 32)event.returnValue = false;"
+                                                        ng-class="{'ng-invalid':customerOpt.loginCode.$invalid}">
+                </div>
+            </div>
+            <!--<div class="item-opt clearfix">-->
+            <!--<div class="col-sm-4 item-title">是否为终端客户&nbsp;:&nbsp;</div>-->
+            <!--<div class="item-input col-sm-8">-->
+            <!--<label for="isEnd">-->
+            <!--<input type="radio" name="isEnd" id="isEnd"-->
+            <!--ng-model="vm.initTools.end"-->
+            <!--onkeypress="javascript:if(event.keyCode == 32)event.returnValue = false;"-->
+            <!--ng-class="{'ng-invalid':customerOpt.loginCode.$invalid}">终端客户-->
+            <!--</label>-->
+            <!--<label for="notEnd">-->
+            <!--<input type="radio" name="isEnd" id="notEnd" ng-model="vm.initTools.end"-->
+            <!--onkeypress="javascript:if(event.keyCode == 32)event.returnValue = false;"-->
+            <!--ng-class="{'ng-invalid':customerOpt.loginCode.$invalid}">非终端客户-->
+            <!--</label>-->
+            <!--</div>-->
+            <!--</div>-->
+            <div class="item-opt clearfix">
+                <label class="col-sm-4 item-title"><span class="star-red">*&nbsp;</span>上传图片&nbsp;:&nbsp;</label>
+                <div class="item-input col-sm-8 clearfix">
+                    <input type="file" ng-model="vm.initTools.iconFile" name="iconFile" id="iconFile"
+                           onchange="angular.element(this).scope().vm.initTools.uploadIcon(this)"/>
+                    <div class="p-hover clearfix">
+                        <img id="previewImg" name="previewImg" ng-src="{{vm.initTools.item.previewImg}}"
+                             ng-show="vm.initTools.item.previewImg"/>
+                        <div class="overlay-hover" ng-click="vm.initTools.removeImg()"><span
+                                class="glyphicon glyphicon-trash"></span></div>
+                    </div>
+                    <button class="btn btn-info btn-upload form-control" ng-if="!vm.initTools.item.previewImg"
+                            ng-click="vm.initTools.uploadClick()">上传
+                    </button>
+                </div>
+            </div>
+            <!--<div class="item-opt clearfix">-->
+            <!--&lt;!&ndash;<label class="col-sm-4 item-title"><span class="star-red">*&nbsp;</span>图片预览&nbsp;:&nbsp;</label>&ndash;&gt;-->
+            <!--<div class="item-input col-sm-8">-->
+            <!--<img ng-src="{{vm.initTools.item.previewImg}}" src=""/>-->
+            <!--&lt;!&ndash;<input type="text" name="preview" id="preview"&ndash;&gt;-->
+            <!--&lt;!&ndash;ng-model="vm.initTools.confirmPwd"&ndash;&gt;-->
+            <!--&lt;!&ndash;onkeypress="javascript:if(event.keyCode == 32)event.returnValue = false;"&ndash;&gt;-->
+            <!--&lt;!&ndash;ng-class="{'ng-invalid':customerOpt.loginCode.$invalid}" required>&ndash;&gt;-->
+            <!--</div>-->
+            <!--</div>-->
+            <div class="item-opt clearfix">
+                <label class="col-sm-4 item-title" for="userName">客户位置&nbsp;:&nbsp;</label>
+                <div class="item-input col-sm-8 item-map">
+                    <div name="container" id="container"></div>
+                    <div class="info">
+                        <div class="input-item">
+                            <input id='tipinput' name="tipinput" type="text" placeholder="搜索地址">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item-opt item-save clearfix">
+                <button class="btn btn-info btn-upload form-control btn-save" ng-click="vm.initTools.saveForm()">保存
+                </button>
+                <button class="btn btn-info btn-upload form-control" onclick="javascript:history.go(-1)">返回</button>
+            </div>
+        </form>
+    </div>
+</div>

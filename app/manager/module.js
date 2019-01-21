@@ -1,0 +1,1 @@
+!function(a){a.module("app.managerModule",["app.managerModule.home","app.managerModule.customer","app.managerModule.user","app.managerModule.deviceList","app.managerModule.deviceOpt","app.managerModule.personalCenter","app.managerModule.statistics"])}(window.angular);

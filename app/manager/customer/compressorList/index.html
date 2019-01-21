@@ -1,0 +1,123 @@
+<div class="content customerDetails compressorList">
+    <div class="m-header"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>&nbsp;&nbsp;当前位置&nbsp;:&nbsp;<span
+            class="m-header-router" ui-sref="manager.customer.home">客户管理</span>&nbsp;/&nbsp;<span
+            class="m-header-router" onclick="javascript:history.go(-1)">客户详情</span>&nbsp;/&nbsp;设备列表
+    </div>
+    <div class="row m-body-total">
+        <div class="col-sm-2 m-body">
+            <div class="item-data">
+                <div class="m-body-title green-color"><span class="glyphicon glyphicon-globe"></span>{{vm.initTools.item.detailJson.name}}
+                </div>
+                <div class="data-img"><img ng-src="{{vm.initTools.item.previewImg}}" src="/images/devices.png"/></div>
+                <div class="data-details m-header">
+                    <!--<div>空压站名称 : {{vm.initTools.item.companyName}}</div>-->
+                    <div>联系人 : {{vm.initTools.item.detailJson.responsiblePerson}}</div>
+                    <div>联系电话 : {{vm.initTools.item.detailJson.responsibleTel}}</div>
+                </div>
+            </div>
+        </div>
+
+        <!--<div class="m-body">-->
+            <!--<div class="item-data">-->
+                <!--<div class="m-body-title green-color"><span class="glyphicon glyphicon-globe"></span>{{vm.initTools.item.companyName}}-->
+                <!--</div>-->
+                <!--<div class="data-img"><a>{{vm.initTools.compressorName}}</a></div>-->
+                <!--<div class="data-details m-header">-->
+                    <!--<div>公司全称 : {{vm.initTools.item.companyName}}</div>-->
+                    <!--<div>公司电话 : {{vm.initTools.item.extend.extendS1.companyTel}}</div>-->
+                    <!--<div>项目对接人 : {{vm.initTools.item.extend.extendS1.responsiblePerson}}</div>-->
+                    <!--<div>公司地址 : {{vm.initTools.item.extend.extendS1.companyAddress}}</div>-->
+                    <!--<div>登录地址 : {{vm.initTools.item.extend.extendS1.loginAddress}}</div>-->
+                    <!--<div>注册时间 : {{vm.initTools.item.createDate|date : 'yyyy-MM-dd hh:mm:ss'}}</div>-->
+                    <!--<div>所属分组 : {{vm.initTools.item.companyName}}</div>-->
+                    <!--<div>项目负责人 : {{vm.initTools.item.extend.extendS1.responsiblePerson}}</div>-->
+                    <!--<div>负责人电话 : {{vm.initTools.item.extend.extendS1.responsibleTel}}</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <div class="col-sm-10">
+            <div class="m-body right-body">
+                <!--<div class="m-body-title clearfix">&lt;!&ndash;<span class="body-title">设备性能&nbsp;&nbsp;</span>&ndash;&gt;-->
+                <!--<div class="body-tabs">-->
+                <!--<a class="title-btn" ng-class="{'device-choose':vm.initTools.deviceType==1}"-->
+                <!--ng-click="vm.initTools.deviceTypeChange(1)">列表查看</a>-->
+                <!--&lt;!&ndash;<a class="title-btn" ng-class="{'device-choose':vm.initTools.deviceType==2}"-->
+                <!--ng-click="vm.initTools.deviceTypeChange(2)">实时数据</a>&ndash;&gt;-->
+                <!--<a class="title-btn" ng-class="{'device-choose':vm.initTools.deviceType==4}"-->
+                <!--ng-click="vm.initTools.deviceTypeChange(4)">故障统计</a>-->
+                <!--<a class="title-btn" ng-class="{'device-choose':vm.initTools.deviceType==3}"-->
+                <!--ng-click="vm.initTools.deviceTypeChange(3)">综合评分</a>-->
+                <!--</div>-->
+                <!--<div class="body-tabs body-tabs-right">-->
+                <!--&lt;!&ndash;<a class="title-btn" ng-click="vm.initTools.add()">新增 <span&ndash;&gt;-->
+                <!--&lt;!&ndash;class="glyphicon glyphicon-plus-sign"></span></a>&ndash;&gt;-->
+                <!--<a class="title-btn" ng-click="vm.initTools.getIotObjectPageListData()">查询 <span-->
+                <!--class="glyphicon glyphicon-search"></span></a>-->
+                <!--</div>-->
+                <!--</div>-->
+                <div class="m-body-title m-body-status clearfix"><span class="body-title">设备状态 ： </span>
+                    <div class="body-tabs">
+                        <a class="title-btn" ng-class="{'tabs-choose':vm.initTools.deviceStatus==0}"
+                           ng-click="vm.initTools.deviceStatusChange(0)">全部</a>
+                        <a class="title-btn" ng-class="{'tabs-choose':vm.initTools.deviceStatus==1}"
+                           ng-click="vm.initTools.deviceStatusChange(1)"><span
+                                class="glyphicon glyphicon-blackboard"></span>&nbsp;加载</a>
+                        <a class="title-btn btn-unload" ng-class="{'tabs-choose':vm.initTools.deviceStatus==2}"
+                           ng-click="vm.initTools.deviceStatusChange(2)"><span
+                                class="glyphicon glyphicon-blackboard"></span>&nbsp;卸载</a>
+                        <a class="title-btn btn-normal" ng-class="{'tabs-choose':vm.initTools.deviceStatus==3}"
+                           ng-click="vm.initTools.deviceStatusChange(3)"><span
+                                class="glyphicon glyphicon-blackboard"></span>&nbsp;通信正常</a>
+                        <a class="title-btn btn-interrupt" ng-class="{'tabs-choose':vm.initTools.deviceStatus==4}"
+                           ng-click="vm.initTools.deviceStatusChange(4)"><span
+                                class="glyphicon glyphicon-blackboard"></span>&nbsp;通信中断</a>
+                        <a class="title-btn btn-shutdown" ng-class="{'tabs-choose':vm.initTools.deviceStatus==5}"
+                           ng-click="vm.initTools.deviceStatusChange(5)"><span
+                                class="glyphicon glyphicon-blackboard"></span>&nbsp;停机</a>
+                    </div>
+                    <div class="body-tabs body-tabs-right">
+                        <!--<a class="title-btn" ng-click="vm.initTools.add()">新增 <span-->
+                        <!--class="glyphicon glyphicon-plus-sign"></span></a>-->
+                        <a class="title-btn" ng-click="vm.initTools.getIotObjectPageListData()">查询 <span
+                                class="glyphicon glyphicon-search"></span></a>
+                    </div>
+                </div>
+                <table class="content-table">
+                    <thead>
+                    <th>序号</th>
+                    <th>设备名称</th>
+                    <th>出厂编号</th>
+                    <th>设备型号</th>
+                    <th>设备类型</th>
+                    <th>设备状态</th>
+                    <th>硬件注册码</th>
+                    <th>操作</th>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="data in vm.initTools.compressorData">
+                        <td><span class="form-number">{{(vm.initTools.pageNo-1)*vm.initTools.pageSize+$index+1}}</span></td>
+                        <td><span class="glyphicon glyphicon-blackboard"></span>&nbsp;{{data.name}}</td>
+                        <td>{{data.detailJson.compressorNum}}</td>
+                        <td>{{data.detailJson.compressorModel}}</td>
+                        <td>{{data.iotTypeId}}</td>
+                        <td>{{data.detailJson.devicestatus}}</td>
+                        <td>{{data.detailJson.registrationCode}}</td>
+                        <td>
+                            <a class="table-btn btn-sign" title="查看" ng-click="vm.initTools.gotoDetails(data)"><span
+                                    class="glyphicon glyphicon-ok-sign"></span></a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="footer-page"><span class="page-set">总共 {{vm.initTools.totalNum}} 条 每页显示<select
+                        name="pageType" id="pageType"
+                        ng-model="vm.initTools.pageSizeStatic" ng-change="vm.initTools.getIotObjectPageListData()">
+            <option ng-repeat="pageType in vm.initTools.pageTypes">{{pageType}}</option>
+        </select>条</span>
+                    <div id="Pagination" align="center"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

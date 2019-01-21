@@ -1,0 +1,1 @@
+!function(a){a.module("app.managerModule.customer",["app.managerModule.customer.details","app.managerModule.customer.home","app.managerModule.customer.opt","app.managerModule.customer.add","app.managerModule.customer.compressorList"])}(window.angular);

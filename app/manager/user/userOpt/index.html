@@ -1,0 +1,132 @@
+<div class="content userOpt">
+    <div class="m-header"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>&nbsp;&nbsp;当前位置&nbsp;:&nbsp;<span
+            class="m-header-router" onclick="javascript:history.go(-1)">用户管理</span>&nbsp;/&nbsp;{{vm.initTools.title}}
+    </div>
+    <div class="m-body">
+        <form name="userOpt" id="userOpt" autocomplete="off">
+            <div class="item-opt clearfix">
+                <label class="col-sm-4 item-title" for="loginCode"><span class="star-red">*&nbsp;</span>登陆账号&nbsp;:&nbsp;</label>
+                <div class="item-input col-sm-8"><input type="text" name="loginCode" id="loginCode" class="form-control"
+                                                        ng-model="vm.initTools.empUser.loginCode"
+                                                        onkeypress="javascript:if(event.keyCode == 32)event.returnValue = false;"
+                                                        ng-class="{'ng-invalid':userOpt.loginCode.$invalid}" required ng-readonly="vm.initTools.type === 'sel'">
+                </div>
+            </div>
+            <div class="item-opt clearfix" ng-if="vm.initTools.type === 'ins'">
+                <label class="col-sm-4 item-title" for="password"><span class="star-red">*&nbsp;</span>密码&nbsp;:&nbsp;</label>
+                <div class="item-input col-sm-8"><input type="{{vm.initTools.hide?'text':'password'}}" name="password" id="password" class="form-control"
+                                                        ng-model="vm.initTools.empUser.password"
+                                                        onkeypress="javascript:if(event.keyCode == 32)event.returnValue = false;"
+                                                        ng-class="{'ng-invalid':userOpt.password.$invalid}" required>
+                    <span ng-mouseover="vm.initTools.hide=true" ng-show="!vm.initTools.hide" class="eye glyphicon glyphicon-eye-open"></span>
+                    <span ng-mouseleave="vm.initTools.hide=false" ng-show="vm.initTools.hide" class="eye glyphicon glyphicon-eye-close"></span>
+                </div>
+            </div>
+            <!--<div class="item-opt clearfix">-->
+                <!--<label class="col-sm-4 item-title" for="pwd">用户密码&nbsp;:&nbsp;</label>-->
+                <!--<div class="item-input col-sm-8"><input type="password" name="pwd" id="pwd" class="form-control"-->
+                                                        <!--ng-model="vm.initTools.pwd"-->
+                                                        <!--onkeypress="javascript:if(event.keyCode == 32)event.returnValue = false;"-->
+                                                        <!--ng-class="{'ng-invalid':userOpt.loginCode.$invalid}" required ng-readonly="vm.initTools.type === 'sel'">-->
+                <!--</div>-->
+            <!--</div>-->
+            <div class="item-opt clearfix">
+                <label class="col-sm-4 item-title" for="userName"><span class="star-red">*&nbsp;</span>用户姓名&nbsp;:&nbsp;</label>
+                <div class="item-input col-sm-8"><input type="text" name="userName" id="userName" class="form-control"
+                                                        ng-model="vm.initTools.empUser.userName"
+                                                        onkeypress="javascript:if(event.keyCode == 32)event.returnValue = false;"
+                                                        ng-class="{'ng-invalid':userOpt.userName.$invalid}" required ng-readonly="vm.initTools.type === 'sel'">
+                </div>
+            </div>
+            <div class="item-opt clearfix">
+                <label class="col-sm-4 item-title" for="mobile"><span class="star-red">*&nbsp;</span>手机号码&nbsp;:&nbsp;</label>
+                <div class="item-input col-sm-8"><input type="tel" ng-pattern="/^[1](([3][0-9])|([4][5,7,9])|([5][4,6,9])|([6][6])|([7][3,5,6,7,8])|([8][0-9])|([9][8,9]))[0-9]{8}$/" name="mobile" id="mobile" class="form-control"
+                                                        ng-model="vm.initTools.empUser.mobile"
+                                                        onkeypress="javascript:if(event.keyCode == 32)event.returnValue = false;"
+                                                        ng-class="{'ng-invalid':userOpt.mobile.$invalid}" required ng-readonly="vm.initTools.type === 'sel'">
+                </div>
+            </div>
+            <div class="item-opt clearfix">
+                <label class="col-sm-4 item-title" for="email">联系邮箱&nbsp;:&nbsp;</label>
+                <div class="item-input col-sm-8"><input type="email" name="email" id="email" class="form-control"
+                                                        ng-model="vm.initTools.empUser.email"
+                                                        onkeypress="javascript:if(event.keyCode == 32)event.returnValue = false;"
+                                                        ng-class="{'ng-invalid':userOpt.loginCode.$invalid}" ng-readonly="vm.initTools.type === 'sel'">
+                </div>
+            </div>
+            <div class="item-opt clearfix">
+                <label class="col-sm-4 item-title" for="role"><span class="star-red">*&nbsp;</span>角色名称&nbsp;:&nbsp;</label>
+                <div class="item-input col-sm-8">
+
+                    <select id="role" name="role" ng-model="vm.initTools.role"
+                            ng-options="role.id as role.name for role in vm.initTools.roles"
+                            class="form-control" required ng-disabled="vm.initTools.type === 'sel'">
+                        <!--<option value="0">请选择</option>-->
+                    </select>
+                    <!--<input type="text" name="province" id="province"-->
+                    <!--ng-model="vm.initTools.province"-->
+                    <!--onkeypress="javascript:if(event.keyCode == 32)event.returnValue = false;"-->
+                    <!--ng-class="{'ng-invalid':userOpt.loginCode.$invalid}" required>-->
+                </div>
+            </div>
+            <div class="item-opt clearfix">
+                <label class="col-sm-4 item-title" for="companyCode"><span class="star-red">*&nbsp;</span>所属客户&nbsp;:&nbsp;</label>
+                <div class="item-input col-sm-8">
+                    <select id="companyCode" name="companyCode" ng-model="vm.initTools.empUser.employee.company.companyCode"
+                            ng-options="companyCode.id as companyCode.name for companyCode in vm.initTools.companyCodes"
+                            class="form-control" required ng-disabled="vm.initTools.type === 'sel'">
+                        <!--<option value="0">请选择</option>-->
+                    </select>
+                    <!--<input type="text" name="city" id="city"-->
+                    <!--ng-model="vm.initTools.city"-->
+                    <!--onkeypress="javascript:if(event.keyCode == 32)event.returnValue = false;"-->
+                    <!--ng-class="{'ng-invalid':userOpt.loginCode.$invalid}" required>-->
+                </div>
+            </div>
+
+            <!--<div class="item-opt clearfix">-->
+                <!--<label class="col-sm-4 item-title" for="job"><span class="star-red">*&nbsp;</span>职位名称&nbsp;:&nbsp;</label>-->
+                <!--<div class="item-input col-sm-8">-->
+                    <!--<select id="job" name="job" ng-model="vm.initTools.empUser.employee.employeePostList[0].postCode"-->
+                            <!--ng-options="post.id as post.postName for post in vm.initTools.postList"-->
+                            <!--class="form-control" required ng-disabled="vm.initTools.type === 'sel'">-->
+                        <!--&lt;!&ndash;<option value="0">请选择</option>&ndash;&gt;-->
+                    <!--</select>-->
+                    <!--&lt;!&ndash;<input type="text" name="area" id="area"&ndash;&gt;-->
+                    <!--&lt;!&ndash;ng-model="vm.initTools.area"&ndash;&gt;-->
+                    <!--&lt;!&ndash;onkeypress="javascript:if(event.keyCode == 32)event.returnValue = false;"&ndash;&gt;-->
+                    <!--&lt;!&ndash;ng-class="{'ng-invalid':userOpt.loginCode.$invalid}" required>&ndash;&gt;-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="item-opt clearfix">-->
+                <!--<label class="col-sm-4 item-title" for="userType">用户类型&nbsp;:&nbsp;</label>-->
+                <!--<div class="item-input col-sm-8">-->
+                    <!--<select id="userType" name="userType" ng-model="vm.initTools.userType"-->
+                            <!--ng-options="area.id as area.name for area in vm.initTools.userTypes"-->
+                            <!--class="form-control" required ng-disabled="vm.initTools.type === 'sel'">-->
+                        <!--&lt;!&ndash;<option value="0">请选择</option>&ndash;&gt;-->
+                    <!--</select>-->
+                    <!--&lt;!&ndash;<input type="text" name="area" id="area"&ndash;&gt;-->
+                    <!--&lt;!&ndash;ng-model="vm.initTools.area"&ndash;&gt;-->
+                    <!--&lt;!&ndash;onkeypress="javascript:if(event.keyCode == 32)event.returnValue = false;"&ndash;&gt;-->
+                    <!--&lt;!&ndash;ng-class="{'ng-invalid':userOpt.loginCode.$invalid}" required>&ndash;&gt;-->
+                <!--</div>-->
+            <!--</div>-->
+            <div class="item-opt clearfix">
+                <label class="col-sm-4 item-title" for="remarks">备注&nbsp;:&nbsp;</label>
+                <div class="item-input col-sm-8">
+                    <textarea name="remarks" id="remarks" ng-model="vm.initTools.empUser.remarks" ng-readonly="vm.initTools.type === 'sel'"></textarea>
+                    <!--<input type="area" name="address" id="address" class="form-control"-->
+                                                        <!--ng-model="vm.initTools.area"-->
+                                                        <!--onkeypress="javascript:if(event.keyCode == 32)event.returnValue = false;"-->
+                                                        <!--ng-class="{'ng-invalid':userOpt.loginCode.$invalid}" required>-->
+                </div>
+            </div>
+            <div class="item-opt item-save clearfix">
+                <button ng-if="vm.initTools.type !== 'sel'" class="btn btn-info btn-upload form-control btn-save" ng-click="vm.initTools.saveForm()">保存</button>
+                <button class="btn btn-info btn-upload form-control" onclick="javascript:history.go(-1)">返回</button>
+            </div>
+
+        </form>
+    </div>
+</div>

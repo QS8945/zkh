@@ -1,0 +1,110 @@
+<div class="content customerDetails">
+    <div class="m-header"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>&nbsp;&nbsp;当前位置&nbsp;:&nbsp;<span
+            class="m-header-router" ui-sref="manager.customer.home">客户管理</span>&nbsp;/&nbsp;客户详情
+    </div>
+    <div class="row m-body-total">
+        <div class="col-sm-2 m-body">
+            <div class="item-data">
+                <div class="m-body-title green-color"><span class="glyphicon glyphicon-globe"></span>{{vm.initTools.item.companyName}}
+                </div>
+                <div class="data-img"><img ng-src="{{vm.initTools.item.previewImg}}" src=""/></div>
+                <div class="data-details m-header">
+                    <div>公司全称 : {{vm.initTools.item.companyName}}</div>
+                    <div>公司地址 : {{vm.initTools.item.extend.extendS1.companyAddress}}</div>
+                    <div>启用状态 : {{vm.initTools.item.status==0?'启用':'禁用'}}</div>
+                    <div>联系人 : {{vm.initTools.item.extend.extendS1.responsiblePersonList[0].responsiblePerson}}</div>
+                    <div>联系电话 : {{vm.initTools.item.extend.extendS1.responsiblePersonList[0].responsibleTel}}</div>
+                    <div>注册时间 : {{vm.initTools.item.createDate|date : 'yyyy-MM-dd hh:mm:ss'}}</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-10">
+            <div class="m-body right-body">
+                <div class="m-body-title">空压系统列表</div>
+                <div class="device-sys">
+                    <!--<div class="device-status">-->
+                    <!--<div class="device-title">设备情况</div>-->
+                    <!--<div class="device-body">-->
+
+                    <!--<div class="col-sm-4">-->
+                    <!--<div id="circle" name="circle"></div>-->
+                    <!--</div>-->
+                    <!--<div class="col-sm-8">-->
+                    <!--<div id="graph" name="graph"></div>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <div class="device-status">
+                        <div class="device-title">空压站列表
+                            <a class="title-btn" ng-click="vm.initTools.add()">新增 <span
+                                    class="glyphicon glyphicon-plus-sign"></span></a>
+                            <!--<div class="status-group">-->
+                            <!--<div class="status-item"><span class="status-color normal"></span>正常</div>-->
+                            <!--<div class="status-item"><span class="status-color stop"></span>停止</div>-->
+                            <!--<div class="status-item"><span class="status-color warning"></span>故障</div>-->
+                            <!--<div class="status-item"><span class="status-color error"></span>报警</div>-->
+                            <!--</div>-->
+                        </div>
+                        <div class="device-body">
+                            <div class="d-body-item" ng-repeat="item in vm.initTools.listData">
+                                <img src="/images/devices.png" ng-src="{{item.previewImg}}" ng-click="vm.initTools.compressorList(item.id)">
+                                <!--<div class="item-title normal" ng-if="item.status==='0'"-->
+                                <!--ng-click="vm.initTools.compressorList(item.id)">正常使用-->
+                                <!--</div>-->
+                                <!--<div class="item-title warning" ng-if="item.status==='1'"-->
+                                <!--ng-click="vm.initTools.compressorList(item.id)">故障维护中-->
+                                <!--</div>-->
+                                <!--<div class="item-title error" ng-if="item.status==='2'"-->
+                                <!--ng-click="vm.initTools.compressorList(item.id)">设备报警-->
+                                <!--</div>-->
+                                <!--<div class="item-title stop" ng-if="item.status==='3'"-->
+                                <!--ng-click="vm.initTools.compressorList(item.id)">停止使用-->
+                                <!--</div>-->
+                                <div class="text-center" ng-click="vm.initTools.compressorList(item.id)">
+                                    {{item.detailJson.name}}
+                                </div>
+                            </div>
+                            <!--<div class="d-body-item">-->
+                            <!--<img src="/images/devices.png">-->
+                            <!--<div class="item-title stop">停止使用</div>-->
+                            <!--</div>-->
+                            <!--<div class="d-body-item">-->
+                            <!--<img src="/images/devices.png">-->
+                            <!--<div class="item-title warning">故障维护中</div>-->
+                            <!--</div>-->
+                            <!--<div class="d-body-item">-->
+                            <!--<img src="/images/devices.png">-->
+                            <!--<div class="item-title normal">正常使用</div>-->
+                            <!--</div>-->
+                            <!--<div class="d-body-item">-->
+                            <!--<img src="/images/devices.png">-->
+                            <!--<div class="item-title normal">正常使用</div>-->
+                            <!--</div>-->
+                            <!--<div class="d-body-item">-->
+                            <!--<img src="/images/devices.png">-->
+                            <!--<div class="item-title normal">正常使用</div>-->
+                            <!--</div>-->
+                            <!--<div class="d-body-item">-->
+                            <!--<img src="/images/devices.png">-->
+                            <!--<div class="item-title error">设备报警</div>-->
+                            <!--</div>-->
+                            <!--<div class="d-body-item">-->
+                            <!--<img src="/images/devices.png">-->
+                            <!--<div class="item-title normal">正常使用</div>-->
+                            <!--</div>-->
+                            <!--<div class="d-body-item">-->
+                            <!--<img src="/images/devices.png">-->
+                            <!--<div class="item-title normal">正常使用</div>-->
+                            <!--</div>-->
+                            <!--<div class="d-body-item">-->
+                            <!--<img src="/images/devices.png">-->
+                            <!--<div class="item-title normal">正常使用</div>-->
+                            <!--</div>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

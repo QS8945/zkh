@@ -1,0 +1,1 @@
+!function(n){n.module("app.components.layout",["ng-layer"])}(window.angular);

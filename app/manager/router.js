@@ -1,0 +1,1 @@
+!function(a){function e(a){var e={url:"/manager",views:{"":{templateUrl:"./app/manager/index.html",controller:"managerController",controllerAs:"vm"}}};a.state("manager",e)}a.module("app.managerModule").config(e),e.$inject=["$stateProvider"]}(window.angular);

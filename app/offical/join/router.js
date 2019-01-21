@@ -1,0 +1,1 @@
+!function(o){function n(o){var n={url:"/join",views:{"":{templateUrl:"./app/offical/join/index.html",controller:"JoinController",controllerAs:"vm"}}};o.state("offical.join",n)}o.module("app.officalModule.join").config(n),n.$inject=["$stateProvider"]}(window.angular);

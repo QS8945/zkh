@@ -1,0 +1,1 @@
+!function(t){function e(t){var e={url:"/opt/:id/:type/",views:{"":{templateUrl:"./app/manager/customer/customerOpt/index.html",controller:"CustomerOptController",controllerAs:"vm"}}};t.state("manager.customer.opt",e)}t.module("app.managerModule.customer.opt").config(e),e.$inject=["$stateProvider"]}(window.angular);

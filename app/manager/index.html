@@ -1,0 +1,47 @@
+<div class="manager">
+    <header>
+        <img src="/images/sys-logo.png">
+        <ul class="header-nav">
+            <li class="nav-item" ui-sref="manager.home" ui-sref-active="active"><a><span
+                    class="glyphicon glyphicon-home"></span>&nbsp;系统首页</a></li>
+            <li class="nav-item" ng-class="{active:state.includes('manager.customer')}" ui-sref="manager.customer.home">
+                <a><span class="fa fa-users"></span>&nbsp;客户管理</a></li>
+            <li class="nav-item" ng-class="{active:state.includes('manager.user')}" ui-sref="manager.user.home"><a><span
+                    class="glyphicon glyphicon-user"></span>&nbsp;用户管理</a></li>
+            <li class="nav-item" ui-sref="manager.deviceList.listShow"
+                ng-class="{active:(state.includes('manager.deviceList')||state.includes('manager.deviceOpt'))}"><a><span
+                    class="glyphicon glyphicon-cog"></span>&nbsp;设备监控</a></li>
+            <li class="nav-item" ui-sref="manager.statistics.customerSta"
+                ng-class="{active:state.includes('manager.statistics')}"><a><span
+                    class="glyphicon glyphicon-signal"></span>&nbsp;统计中心</a></li>
+            <li class="nav-item" ui-sref="manager.personalCenter"
+                ng-class="{active:state.includes('manager.personalCenter')}"><a><span
+                    class="fa fa-cogs"></span>&nbsp;系统管理</a></li>
+        </ul>
+
+        <div class="header-set">
+            <span class="h-s-item">
+                <span>欢迎您 {{vm.initData.userName}}</span>
+                <ul class="tab-icon-childs">
+                    <!--<li class="tab-icon-child">-->
+                        <!--个人中心-->
+                    <!--</li>-->
+                    <li class="tab-icon-child" ui-sref="manager.personalCenter">
+                        修改密码
+                    </li>
+                    <!--<li class="tab-icon-child">-->
+                        <!--个人设置-->
+                    <!--</li>-->
+                </ul>
+            </span>
+            <!--<a class="h-s-item"><span class="glyphicon glyphicon-cog"></span>系统设置</a>-->
+            <a title="注销" class="h-s-item" ng-click="vm.COMMONJS.cancel()">
+                <span class="glyphicon glyphicon-off"></span></a>
+        </div>
+    </header>
+    <ui-view></ui-view>
+    <div class="footer-copyright">
+        <p>Copyright<em>©</em> zkh360.com 1998 - 2018 Corporation All Rights Reserved <a
+                href="http://www.miitbeian.gov.cn/">沪ICP备10006078号-5</a></p>
+    </div>
+</div>

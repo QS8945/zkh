@@ -1,0 +1,1 @@
+!function(e){function u(e){function u(){return e("queryMenus")}return{queryMenu:u}}e.module("app.resource").factory("menuResource",u),u.$inject=["webResource"]}(window.angular);

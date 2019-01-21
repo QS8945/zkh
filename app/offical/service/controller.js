@@ -1,0 +1,1 @@
+!function(){function e(e,o,i,l,n,r,t,c,s){var a=this;a.initTools={}}angular.module("app.officalModule.service").controller("ServiceController",e),e.$inject=["$scope","layer","API","session","MD5","$state","TEMPLATEDATA","COMMONJS","JEEAPI"]}();

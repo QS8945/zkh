@@ -1,0 +1,1 @@
+!function(){function o(o,n,i,l,e,t,a,r,s){var c=this;c.initTools={}}angular.module("app.officalModule.join").controller("JoinController",o),o.$inject=["$scope","layer","API","session","MD5","$state","TEMPLATEDATA","COMMONJS","JEEAPI"]}();

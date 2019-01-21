@@ -1,0 +1,1 @@
+!function(o){o.module("app.officalModule.join",[])}(window.angular);

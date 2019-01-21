@@ -1,0 +1,1 @@
+!function(o){function t(o,t,n,e,l,s,a,i){var r=this;this.session=l,r.initTools={},this.initData={}}var n={templateUrl:"./components/layout/header.tpl.html",controller:t,controllerAs:"vm"};o.module("app.components.layout").component("layout",n),t.$inject=["$scope","$rootScope","layer","API","session","MD5","$state","TEMPLATEDATA"]}(window.angular);

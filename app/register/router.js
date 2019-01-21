@@ -1,0 +1,1 @@
+!function(e){function r(e){var r={url:"/register",views:{"":{templateUrl:"./app/register/index.html",controller:"registerController",controllerAs:"vm"}}};e.state("register",r)}e.module("app.registerModule").config(r),r.$inject=["$stateProvider"]}(window.angular);
